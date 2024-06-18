@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graphics_1.c                                       :+:      :+:    :+:   */
+/*   graphics_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 08:11:11 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 08:11:11 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 13:06:07 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 13:06:07 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 
-t_vec2	vec2_add(const t_vec2 v0, const t_vec2 v1)
+float vec2_length(const t_vec2 v)
 {
-	return (vec2(v0.x + v1.x, v0.y + v1.y));
+	return sqrt(v.x * v.x + v.y * v.y);
 }
 
-t_vec2	vec2_sub(const t_vec2 v0, const t_vec2 v1)
+float vec2_length_squared(const t_vec2 v)
 {
-	return (vec2(v0.x - v1.x, v0.y - v1.y));
+	return v.x * v.x + v.y * v.y;
 }
 
-t_vec2	vec2_mul(const t_vec2 v0, const t_vec2 v1)
+t_vec2 vec2_normalize(t_vec2 v)
 {
-	return (vec2(v0.x * v1.x, v0.y * v1.y));
+	vec2_normalized(&v);
+	return (v);
 }
 
-t_vec2	vec2_div(const t_vec2 v0, const t_vec2 v1)
+void vec2_normalized(t_vec2 *const v)
 {
-	return (vec2(v0.x / v1.x, v0.y / v1.y));
-}
-
-t_vec2	vec2_scale(const t_vec2 v, const int32_t scale)
-{
-	return (vec2(v.x * scale, v.y * scale));
+	float len = vec2_length(*v);
+	if (len != 0.0f)
+	{
+		float inv_len = 1.0f / len;
+		v->x *= inv_len;
+		v->y *= inv_len;
+	}
 }

@@ -1,38 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graphics_2.c                                       :+:      :+:    :+:   */
+/*   graphics_3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 08:11:18 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 08:11:19 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 13:09:53 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 13:09:53 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 
-t_vec3	vec3_add(const t_vec3 v0, const t_vec3 v1)
+t_vec3 vec3(const int32_t x, const int32_t y, const int32_t z)
 {
-	return (vec3(v0.x + v1.x, v0.y + v1.y, v0.z + v1.z));
+	return (t_vec3){
+	    .x = x,
+	    .y = y,
+	    .z = z,
+	};
 }
 
-t_vec3	vec3_sub(const t_vec3 v0, const t_vec3 v1)
+t_vec3 vec3_add(t_vec3 a, t_vec3 b)
 {
-	return (vec3(v0.x - v1.x, v0.y - v1.y, v0.z - v1.z));
+	return (t_vec3){
+	    .x = a.x + b.x,
+	    .y = a.y + b.y,
+	    .z = a.z + b.z,
+	};
 }
 
-t_vec3	vec3_mul(const t_vec3 v0, const t_vec3 v1)
+t_vec3 vec3_sub(t_vec3 a, t_vec3 b)
 {
-	return (vec3(v0.x * v1.x, v0.y * v1.y, v0.z * v1.z));
+	return (t_vec3){
+	    .x = a.x - b.x,
+	    .y = a.y - b.y,
+	    .z = a.z - b.z,
+	};
 }
 
-t_vec3	vec3_div(const t_vec3 v0, const t_vec3 v1)
+t_vec3 vec3_mul(t_vec3 a, t_vec3 b)
 {
-	return (vec3(v0.x / v1.x, v0.y / v1.y, v0.z * v1.z));
+	return (t_vec3){
+	    .x = a.x * b.x,
+	    .y = a.y * b.y,
+	    .z = a.z * b.z,
+	};
 }
 
-t_vec3	vec3_scale(const t_vec3 v, const int32_t scale)
+t_vec3 vec3_div(t_vec3 a, t_vec3 b)
 {
-	return (vec3(v.x * scale, v.y * scale, v.z * scale));
+	return (t_vec3){
+	    .x = a.x / b.x,
+	    .y = a.y / b.y,
+	    .z = a.z / b.z,
+	};
 }

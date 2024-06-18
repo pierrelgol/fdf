@@ -13,133 +13,59 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
-#include "essentials.h"
 #include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdlib.h>
 
-typedef union u_vec2 t_vec2;
-typedef union u_vec3 t_vec3;
-typedef union u_vec4 t_vec4;
-typedef union u_col4 t_color;
-typedef union u_mat4 t_mat4;
+typedef union u_vec2   t_vec2;
+typedef union u_vec3   t_vec3;
+typedef union u_color  t_color;
+typedef union u_color2 t_color2;
 
 union u_vec2
 {
-	int32_t data[2];
-	struct
+	float_t data[2];
+	union
 	{
-		union
+		struct
 		{
-			int32_t x;
-			int32_t u;
+			float_t x;
+			float_t u;
 		};
-
-		union
+		struct
 		{
-			int32_t y;
-			int32_t v;
+			float_t y;
+			float_t v;
 		};
 	};
 };
-
-t_vec2  vec2(const int32_t x, const int32_t y);
-t_vec2  vec2_add(const t_vec2 v0, const t_vec2 v1);
-t_vec2  vec2_sub(const t_vec2 v0, const t_vec2 v1);
-t_vec2  vec2_mul(const t_vec2 v0, const t_vec2 v1);
-t_vec2  vec2_div(const t_vec2 v0, const t_vec2 v1);
-t_vec2  vec2_scale(const t_vec2 v, const int32_t scale);
-float_t vec2_distance(const t_vec2 v1, const t_vec2 v2);
 
 union u_vec3
 {
-	int32_t data[3];
-
-	struct
+	float_t data[3];
+	union
 	{
-		union
+		struct
 		{
-			int32_t x;
-			int32_t u;
+			float_t x;
+			float_t u;
 		};
-
-		union
+		struct
 		{
-			int32_t y;
-			int32_t v;
+			float_t y;
+			float_t v;
 		};
-
-		union
+		struct
 		{
-			int32_t z;
-			int32_t s;
+			float_t z;
+			float_t t;
 		};
 	};
 };
 
-t_vec3  vec3(const int32_t x, const int32_t y, const int32_t z);
-t_vec3  vec3_add(const t_vec3 v0, const t_vec3 v1);
-t_vec3  vec3_sub(const t_vec3 v0, const t_vec3 v1);
-t_vec3  vec3_mul(const t_vec3 v0, const t_vec3 v1);
-t_vec3  vec3_div(const t_vec3 v0, const t_vec3 v1);
-t_vec3  vec3_scale(const t_vec3 v, const int32_t scale);
-float_t vec3_distance(const t_vec3 v1, const t_vec3 v2);
-
-union u_vec4
+union u_color
 {
-	int32_t data[4];
-
-	struct
-	{
-		union
-		{
-			int32_t x;
-			int32_t u;
-		};
-
-		union
-		{
-			int32_t y;
-			int32_t v;
-		};
-
-		union
-		{
-			int32_t z;
-			int32_t s;
-		};
-
-		union
-		{
-			int32_t w;
-			int32_t t;
-		};
-	};
-};
-
-t_vec4 vec4(const int32_t x, const int32_t y, const int32_t z, const int32_t w);
-t_vec4 vec4_add(const t_vec4 v0, const t_vec4 v1);
-t_vec4 vec4_sub(const t_vec4 v0, const t_vec4 v1);
-t_vec4 vec4_mul(const t_vec4 v0, const t_vec4 v1);
-t_vec4 vec4_div(const t_vec4 v0, const t_vec4 v1);
-t_vec4 vec4_scale(const t_vec4 v, const int32_t scale);
-
-union u_mat4
-{
-	int32_t data[16];
-	struct
-	{
-		t_vec4 rows[4];
-	};
-};
-
-t_mat4 mat4(const t_vec4 r0, const t_vec4 r1, const t_vec4 r2, const t_vec4 r3);
-t_mat4 mat4_identity(void);
-
-union u_col4
-{
-	int32_t color;
+	int32_t argb;
 	struct
 	{
 		uint8_t a;
@@ -149,8 +75,45 @@ union u_col4
 	};
 };
 
-t_color color(const int32_t value);
-int32_t clamp(const int32_t min, const int32_t value, const int32_t max);
-float_t fclamp(const float_t min, const float_t value, const float_t max);
+t_color color(const int32_t argb);
+
+union u_color2
+{
+	int32_t argb[2];
+	struct
+	{
+		t_color c[2];
+	};
+};
+
+int32_t color2_lerp(t_vec2 at, t_vec2 start, t_vec2 end, const t_color2 start_end);
+t_color2 color2(const int32_t argb1, const int32_t argb2);
+
+// Vector operations
+t_vec2  vec2(const int32_t x, const int32_t y);
+t_vec2  vec2_add(const t_vec2 a, const t_vec2 b);
+t_vec2  vec2_sub(const t_vec2 a, const t_vec2 b);
+t_vec2  vec2_mul(const t_vec2 a, const t_vec2 b);
+t_vec2  vec2_div(const t_vec2 a, const t_vec2 b);
+float_t vec2_length(t_vec2 v);
+float_t vec2_length_squared(t_vec2 v);
+t_vec2  vec2_normalize(t_vec2 v);
+void    vec2_normalized(t_vec2 *v);
+
+t_vec3 vec3(const int32_t x, const int32_t y, const int32_t z);
+t_vec3 vec3_add(t_vec3 a, t_vec3 b);
+t_vec3 vec3_sub(t_vec3 a, t_vec3 b);
+t_vec3 vec3_mul(t_vec3 a, t_vec3 b);
+t_vec3 vec3_div(t_vec3 a, t_vec3 b);
+
+float_t vec3_length(t_vec3 v);
+float_t vec3_length_squared(t_vec3 v);
+float_t vec3_distance(t_vec3 a, t_vec3 b);
+float_t vec3_distance_squared(t_vec3 a, t_vec3 b);
+t_vec3  vec3_normalize(t_vec3 v);
+void    vec3_normalized(t_vec3 *v);
+t_vec3  vec3_rotate_x(t_vec3 v, float_t angle);
+t_vec3  vec3_rotate_y(t_vec3 v, float_t angle);
+t_vec3  vec3_rotate_z(t_vec3 v, float_t angle);
 
 #endif

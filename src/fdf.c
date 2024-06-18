@@ -25,9 +25,6 @@ t_fdf_container	*fdf_container_create(const char *const file_name)
 	if (!parser_parse(self->parser, self->parser->parsed_width,
 			self->parser->parsed_height, self->parser->rows))
 		return (fdf_container_destroy(self));
-	self->renderer = renderer_create(self->parser, WIDTH, HEIGHT);
-	if (!self->renderer)
-		return (fdf_container_destroy(self));
 	return (self);
 }
 
@@ -53,9 +50,6 @@ bool	fdf_container_init(t_fdf_container *const self)
 
 bool	fdf_container_run(t_fdf_container *const self)
 {
-	renderer_init(self->renderer, self->renderer->world_width, self->renderer->world_height);
-	renderer_setup(self->renderer, self);
-	draw(self->renderer);
 	mlx_hook(self->win_handle, 17, 0, inputs_on_program_exit, self);
 	mlx_key_hook(self->win_handle, inputs_on_key_press, self);
 	mlx_loop(self->mlx_handle);
@@ -68,8 +62,6 @@ t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
 	{
 		if (self->parser)
 			parser_destroy(self->parser);
-		if (self->renderer)
-			renderer_destroy(self->renderer);
 		if (self->mlx_handle)
 		{
 			if (self->img_handle)

@@ -3,34 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   graphics_5.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 08:11:42 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 08:11:43 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 13:19:30 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 13:19:31 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 
-t_mat4	mat4_identity(void)
+void vec3_normalized(t_vec3 *v)
 {
-	return (mat4(vec4(1, 0, 0, 0), vec4(0, 1, 0, 0), vec4(0, 0, 1, 0), vec4(0,
-				0, 0, 1)));
+	float len = vec3_length(*v);
+	if (len != 0.0f)
+	{
+		float inv_len = 1.0f / len;
+		v->x *= inv_len;
+		v->y *= inv_len;
+		v->z *= inv_len;
+	}
 }
 
-float_t	vec2_distance(const t_vec2 v1, const t_vec2 v2)
+t_vec3 vec3_rotate_x(t_vec3 v, float angle)
 {
-	const float_t	dx = v2.x - v1.x;
-	const float_t	dy = v2.y - v1.y;
-
-	return (sqrt(dx * dx + dy * dy));
+	const float cos_a = cos(angle);
+	const float sin_a = sin(angle);
+	return (vec3(v.x, v.y * cos_a - v.z * sin_a, v.y * sin_a + v.z * cos_a));
 }
 
-float_t	vec3_distance(const t_vec3 v1, const t_vec3 v2)
+t_vec3 vec3_rotate_y(t_vec3 v, float angle)
 {
-	const float_t	dx = v2.x - v1.x;
-	const float_t	dy = v2.y - v1.y;
-	const float_t	dz = v2.z - v1.z;
+	const float cos_a = cos(angle);
+	const float sin_a = sin(angle);
+	return (vec3(v.x * cos_a + v.z * sin_a, v.y, -v.x * sin_a + v.z * cos_a));
+}
 
-	return (sqrt(dx * dx + dy * dy + dz * dz));
+t_vec3 vec3_rotate_z(t_vec3 v, float angle)
+{
+	const float cos_a = cos(angle);
+	const float sin_a = sin(angle);
+	return (vec3(v.x * cos_a - v.y * sin_a, v.x * sin_a + v.y * cos_a, v.z));
 }

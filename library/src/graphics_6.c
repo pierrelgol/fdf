@@ -3,53 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   graphics_6.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 08:11:46 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 08:11:47 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 13:20:14 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 13:20:15 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 
-int32_t	color_value(const t_color col)
+t_color color(const int32_t argb)
 {
-	return (col.color);
+	return (t_color){
+	    .a = (argb >> 24) & 0xFF,
+	    .r = (argb >> 16) & 0xFF,
+	    .g = (argb >> 8) & 0xFF,
+	    .b = (argb) & 0xFF,
+	};
 }
 
-float_t	vec2_percentage(const t_vec2 start, const t_vec2 end, const t_vec2 at)
+int32_t color2_lerp(t_vec2 at, t_vec2 start, t_vec2 end, const t_color2 start_end)
 {
-	float_t	total_distance;
-	float_t	curr_distance;
+	const int32_t start_color = start_end.argb[0];
+	const int32_t end_color = start_end.argb[1];
+	const float_t alpha = (at.x - start.x) / (end.x - start.x);
 
-	total_distance = vec2_distance(start, end);
-	curr_distance = vec2_distance(start, at);
-	if (total_distance == 0.0f)
-		return (0.0f);
-	return (curr_distance / total_distance);
+	const t_color result = (t_color){
+	    .a = (1.0f - alpha) * ((start_color >> 24) & 0xFF) + alpha * ((end_color >> 24) & 0xFF),
+	    .r = (1.0f - alpha) * ((start_color >> 16) & 0xFF) + alpha * ((end_color >> 16) & 0xFF),
+	    .g = (1.0f - alpha) * ((start_color >> 8) & 0xFF) + alpha * ((end_color >> 8) & 0xFF),
+	    .b = (1.0f - alpha) * (start_color & 0xFF) + alpha * (end_color & 0xFF),
+	};
+	return (result.argb);
 }
 
-float_t	vec3_percentage(const t_vec3 start, const t_vec3 end, const t_vec3 at)
+t_color2 color2(const int32_t argb1, const int32_t argb2)
 {
-	float_t	total_distance;
-	float_t	curr_distance;
-
-	total_distance = vec3_distance(start, end);
-	curr_distance = vec3_distance(start, at);
-	if (total_distance == 0.0f)
-		return (0.0f);
-	return (curr_distance / total_distance);
-}
-
-t_color	color_lerp(const t_color start, const t_color end, const float_t scalar)
-{
-	t_color	lerped_color;
-	float_t	t;
-
-	t = fclamp(0.0f, scalar, 1.0f);
-	lerped_color.a = (uint8_t)(start.a + (end.a - start.a) * t);
-	lerped_color.r = (uint8_t)(start.r + (end.r - start.r) * t);
-	lerped_color.g = (uint8_t)(start.g + (end.g - start.g) * t);
-	lerped_color.b = (uint8_t)(start.b + (end.b - start.b) * t);
-	return (lerped_color);
+	t_color2 result;
+	result.argb[0] = argb1;
+	result.argb[1] = argb2;
+	return (result);
 }

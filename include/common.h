@@ -67,78 +67,15 @@ struct s_parser
 	int32_t **color_matrix;
 };
 
-
 struct s_renderer
 {
-	t_parser *parser;
-	void     *mlx_handle;
-	void     *win_handle;
-	void     *img_handle;
-	char     *img_buffer;
-	int32_t   img_size;
-	int32_t   img_bpp;
-	int32_t   img_endian;
+	int32_t  height;
+	int32_t  width;
 
-	t_vec3	position;
-	t_vec3	orientation;
-	float_t offset_zoom;
-	float_t z_amplitude;
-
-	t_vec3 cam_position;
-	t_vec3 cam_target;
-	t_vec3 cam_up;
-	float  cam_fov;
-	float  cam_aspect_ratio;
-	float  cam_near_plane;
-	float  cam_far_plane;
-
-	float_t   ratio_w;
-	float_t   ratio_h;
-	int32_t   world_width;
-	int32_t   world_height;
-	t_vec3   *world_coord_buffer;
-	int32_t  *world_color_buffer;
-	t_vec3  **world_coord;
-	int32_t **world_color;
-
-	int32_t   screen_width;
-	int32_t   screen_height;
-	t_vec2   *screen_coord_buffer;
-	int32_t  *screen_color_buffer;
-	t_vec2  **screen_coord;
-	int32_t **screen_color;
-
-	t_vec3 p;
-	int32_t	err1;
-	int32_t	err2;
-	double cos_pitch;
-	double sin_pitch;
-	double cos_yaw;
-	double sin_yaw;
-	double cos_roll;
-	double sin_roll;
-	double zoom;
-	double relative_x;
-	double relative_y;
-	double relative_z;
-	double projected_x;
-	double projected_y;
-	double scale_factor;
-	double screen_x;
-	double screen_y;
-	double normalized_x;
-	double normalized_y;
-	double temp_x;
-	double temp_y;
-	double temp_z;
-	bool    is_dirty;
-};
-
-struct s_renderer_2
-{
-	int32_t	height;
-	int32_t	width;
-	
+	t_vec3  *world_buffer;
+	t_vec3 **world_coord;
+	t_vec2	*screen_buffer;
+	t_vec2 **screen_coord;
 };
 
 struct s_fdf_container

@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graphics_3.c                                       :+:      :+:    :+:   */
+/*   graphics_4.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 08:11:22 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 08:11:23 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 13:12:26 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 13:12:26 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "graphics.h"
 
-t_vec4	vec4_add(const t_vec4 v0, const t_vec4 v1)
+#include <math.h>
+
+float vec3_length(t_vec3 v)
 {
-	return (vec4(v0.x + v1.x, v0.y + v1.y, v0.z + v1.z, v0.w + v1.w));
+	return (sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
 }
 
-t_vec4	vec4_sub(const t_vec4 v0, const t_vec4 v1)
+float vec3_length_squared(t_vec3 v)
 {
-	return (vec4(v0.x - v1.x, v0.y - v1.y, v0.z - v1.z, v0.w - v1.w));
+	return (v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
-t_vec4	vec4_mul(const t_vec4 v0, const t_vec4 v1)
+float vec3_distance(t_vec3 a, t_vec3 b)
 {
-	return (vec4(v0.x * v1.x, v0.y * v1.y, v0.z * v1.z, v0.w * v1.w));
+	const float dx = b.x - a.x;
+	const float dy = b.y - a.y;
+	const float dz = b.z - a.z;
+
+	return (sqrt(dx * dx + dy * dy + dz * dz));
 }
 
-t_vec4	vec4_div(const t_vec4 v0, const t_vec4 v1)
+float vec3_distance_squared(t_vec3 a, t_vec3 b)
 {
-	return (vec4(v0.x / v1.x, v0.y / v1.y, v0.z / v1.z, v0.w / v1.w));
+	const float dx = b.x - a.x;
+	const float dy = b.y - a.y;
+	const float dz = b.z - a.z;
+	return (dx * dx + dy * dy + dz * dz);
 }
 
-t_vec4	vec4_scale(const t_vec4 v, const int32_t scale)
+t_vec3 vec3_normalize(t_vec3 v)
 {
-	return (vec4(v.x * scale, v.y * scale, v.z * scale, v.w * scale));
+	vec3_normalized(&v);
+	return (v);
 }
