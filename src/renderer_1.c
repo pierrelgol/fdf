@@ -58,6 +58,8 @@ t_renderer *renderer_create(const t_parser *const config, const int32_t screen_w
 		return (renderer_destroy(self));
 	self->z_amplitude = 1.0f;
 	self->offset_zoom = 1.0f;
+	self->orientation = vec3(25, 25, 25);
+	self->position = vec3(-(self->world_width / 2), -(self->world_height / 2), 10);
 	return (self);
 }
 

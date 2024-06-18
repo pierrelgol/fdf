@@ -79,14 +79,10 @@ struct s_renderer
 	int32_t   img_bpp;
 	int32_t   img_endian;
 
-	int32_t offset_x;
-	int32_t offset_y;
-	int32_t offset_z;
+	t_vec3	position;
+	t_vec3	orientation;
 	float_t offset_zoom;
 	float_t z_amplitude;
-	float_t offset_pitch;
-	float_t offset_yaw;
-	float_t offset_roll;
 
 	t_vec3 cam_position;
 	t_vec3 cam_target;
@@ -135,12 +131,14 @@ struct s_renderer
 	double temp_x;
 	double temp_y;
 	double temp_z;
-
-	float_t world_to_camera_matrix[4][4];
-	float_t world_to_screen_matrix[4][4];
-	float_t cam_view_matrix[4][4];
-	float_t cam_projection_matrix[4][4];
 	bool    is_dirty;
+};
+
+struct s_renderer_2
+{
+	int32_t	height;
+	int32_t	width;
+	
 };
 
 struct s_fdf_container

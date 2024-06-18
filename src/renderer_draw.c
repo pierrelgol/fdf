@@ -35,9 +35,9 @@ void	renderer_fill_relative(t_renderer *const self, const int32_t x,
 	t_vec3	v;
 
 	v = self->world_coord[y][x];
-	self->relative_x = v.x;
-	self->relative_y = v.y;
-	self->relative_z = v.z;
+	self->relative_x = v.x / self->ratio_w;
+	self->relative_y = v.y / self->ratio_h;
+	self->relative_z = v.z / self->zoom;
 }
 
 #define COS30 0.86602540378f
@@ -70,5 +70,4 @@ void	renderer_from_world_to_projected(t_renderer *const self,
 		}
 		++y;
 	}
-	// renderer_center_world_to_screen(self, world_width, world_height);
 }

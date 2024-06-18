@@ -24,15 +24,14 @@ void	rotate(double *const a, double *const b, const double cos_angle,
 
 void	initialize_renderer_values(t_renderer *self)
 {
-	self->cos_pitch = cos(self->offset_pitch);
-	self->sin_pitch = sin(self->offset_pitch);
-	self->cos_yaw = cos(self->offset_yaw);
-	self->sin_yaw = sin(self->offset_yaw);
-	self->cos_roll = cos(self->offset_roll);
-	self->sin_roll = sin(self->offset_roll);
+	self->cos_pitch = cos((self->orientation.x * 360.0f) / 100.0f);
+	self->sin_pitch = sin((self->orientation.x * 360.0f) / 100.0f);
+	self->cos_yaw   = cos((self->orientation.y * 360.0f) / 100.0f);
+	self->sin_yaw   = sin((self->orientation.y * 360.0f) / 100.0f);
+	self->cos_roll  = cos((self->orientation.z * 360.0f) / 100.0f);
+	self->sin_roll  = sin((self->orientation.z * 360.0f) / 100.0f);
 	self->zoom = self->offset_zoom;
-	self->scale_factor = (2 * ((double)self->ratio_w / self->ratio_w))
-		* self->zoom;
+	self->scale_factor = ((double)self->ratio_w / self->ratio_w) * self->zoom;
 	self->normalized_x = 0.0;
 	self->normalized_y = 0.0;
 	self->screen_x = 0.0;
@@ -66,10 +65,8 @@ void	renderer_offset_world_pos(t_renderer *const self,
 		x = 0;
 		while (x < world_width)
 		{
-			self->world_coord[y][x].x += self->offset_x;
-			self->world_coord[y][x].y += self->offset_y;
-			self->world_coord[y][x].z += (self->p.z + self->offset_z)
-				* self->z_amplitude;
+			self->world_coord[y][x] = vec3_add(self->world_coord[y][x],self->position);
+			self->world_coord[y][x].z *= (1 * self->z_amplitude);
 			++x;
 		}
 		++y;

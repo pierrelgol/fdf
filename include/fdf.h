@@ -49,10 +49,6 @@ bool 		renderer_clear_screen(t_renderer *const self);
 bool		renderer_deinit_screen(t_renderer *const self);
 t_renderer *renderer_destroy(t_renderer *const self);
 
-void rotate_yaw(double* x, double* z, double cos_yaw, double sin_yaw);
-void rotate_pitch(double* y, double* z, double cos_pitch, double sin_pitch);
-void rotate_roll(double* x, double* y, double cos_roll, double sin_roll);
-
 
 void renderer_clear(t_renderer *const self);
 void renderer_setup(t_renderer *const self, const t_fdf_container *const fdf);
