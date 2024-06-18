@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-static int32_t char_to_digit(const char ch)
+static int32_t	char_to_digit(const char ch)
 {
 	if (ch >= '0' && ch <= '9')
 		return (ch - '0');
@@ -23,10 +23,10 @@ static int32_t char_to_digit(const char ch)
 	return (0);
 }
 
-int64_t string_to_base(const char *str, char **endptr, const int32_t base)
+int64_t	string_to_base(const char *str, char **endptr, const int32_t base)
 {
-	int64_t result;
-	bool    negative;
+	int64_t	result;
+	bool	negative;
 
 	negative = false;
 	while (is_space(*str))
@@ -44,6 +44,6 @@ int64_t string_to_base(const char *str, char **endptr, const int32_t base)
 	if (*str == '\0')
 		*endptr = NULL;
 	else
-		*endptr = (char*)str;
+		*endptr = (char *)str;
 	return (((negative) * (-result)) + ((!negative) * (result)));
 }

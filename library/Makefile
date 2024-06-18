@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 CC = clang
-CFLAGS = -Iinclude -Wall -Wextra -O3
-# CFLAGS = -Iinclude -Wall -Wextra -g3 -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=integer
+# CFLAGS = -Iinclude -Wall -Wextra -O3
+CFLAGS = -Iinclude -Wall -Wextra -g3 -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=integer
 SRC_DIR = src
 INCLUDE_DIR = include
 TARGET_LIB = libslib.a

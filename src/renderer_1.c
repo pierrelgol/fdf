@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   renderer.c                                         :+:      :+:    :+:   */
+/*   renderer_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
+/*   By: pollivie <plgol.perso@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 11:04:53 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 11:04:54 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/18 10:17:27 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/18 10:17:28 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ t_renderer *renderer_create(const t_parser *const config, const int32_t screen_w
 {
 	t_renderer *self;
 
-	(void)screen_height;
-	(void)screen_width;
+	(void) screen_height;
+	(void) screen_width;
 	self = (t_renderer *) memory_alloc(sizeof(t_renderer));
 	if (!self)
 		return (NULL);
-	self->parser = (t_parser*)config;
+	self->parser = (t_parser *) config;
 	if (!renderer_alloc_world_backend(self, config->parsed_width, config->parsed_height))
 		return (renderer_destroy(self));
 	if (!renderer_alloc_screen_backend(self, config->parsed_width, config->parsed_height))
@@ -61,15 +61,13 @@ t_renderer *renderer_create(const t_parser *const config, const int32_t screen_w
 	return (self);
 }
 
-void renderer_init(t_renderer *const self)
+void renderer_init(t_renderer *const self, const int32_t width, const int32_t height)
 {
-	int32_t width;
-	int32_t height;
+	t_vec3  v;
 	int32_t x;
 	int32_t y;
+	int32_t c;
 
-	width = self->world_width;
-	height = self->world_height;
 	renderer_clear_world(self);
 	renderer_clear_screen(self);
 	y = 0;
@@ -78,8 +76,10 @@ void renderer_init(t_renderer *const self)
 		x = 0;
 		while (x < width)
 		{
-			self->world_coord[y][x] = vec3(x, y, self->parser->zaxis_matrix[y][x]);
-			self->world_color[y][x] = color(self->parser->color_matrix[y][x]).color;
+			v = vec3(x, y, self->parser->zaxis_matrix[y][x]);
+			c = color(self->parser->color_matrix[y][x]).color;
+			self->world_coord[y][x] = v;
+			self->world_color[y][x] = c;
 			++x;
 		}
 		++y;

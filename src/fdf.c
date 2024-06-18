@@ -12,27 +12,26 @@
 
 #include "fdf.h"
 
-t_fdf_container *fdf_container_create(const char *const file_name)
+t_fdf_container	*fdf_container_create(const char *const file_name)
 {
-	t_fdf_container *self;
+	t_fdf_container	*self;
 
-	self = (t_fdf_container *) memory_alloc(sizeof(t_fdf_container));
+	self = (t_fdf_container *)memory_alloc(sizeof(t_fdf_container));
 	if (!self)
 		return (NULL);
 	self->parser = parser_create(file_name);
 	if (!self->parser)
 		return (fdf_container_destroy(self));
-	if (!parser_parse(self->parser, self->parser->parsed_width, self->parser->parsed_height,
-	                  self->parser->rows))
+	if (!parser_parse(self->parser, self->parser->parsed_width,
+			self->parser->parsed_height, self->parser->rows))
 		return (fdf_container_destroy(self));
 	self->renderer = renderer_create(self->parser, WIDTH, HEIGHT);
 	if (!self->renderer)
 		return (fdf_container_destroy(self));
-	renderer_init(self->renderer);
 	return (self);
 }
 
-bool fdf_container_init(t_fdf_container *const self)
+bool	fdf_container_init(t_fdf_container *const self)
 {
 	if (!self)
 		return (false);
@@ -45,25 +44,25 @@ bool fdf_container_init(t_fdf_container *const self)
 	self->img_handle = mlx_new_image(self->mlx_handle, WIDTH, HEIGHT);
 	if (!self->img_handle)
 		return (false);
-	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp, &self->img_size, &self->img_endian);
+	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp,
+			&self->img_size, &self->img_endian);
 	if (!self->img_buffer)
 		return (false);
 	return (true);
 }
 
-bool fdf_container_run(t_fdf_container *const self)
+bool	fdf_container_run(t_fdf_container *const self)
 {
-	renderer_init(self->renderer);
+	renderer_init(self->renderer, self->renderer->world_width, self->renderer->world_height);
 	renderer_setup(self->renderer, self);
 	draw(self->renderer);
-	renderer_teardown(self->renderer, self);
 	mlx_hook(self->win_handle, 17, 0, inputs_on_program_exit, self);
 	mlx_key_hook(self->win_handle, inputs_on_key_press, self);
 	mlx_loop(self->mlx_handle);
 	return (true);
 }
 
-t_fdf_container *fdf_container_destroy(t_fdf_container *const self)
+t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
 {
 	if (self)
 	{
@@ -81,6 +80,8 @@ t_fdf_container *fdf_container_destroy(t_fdf_container *const self)
 			memory_dealloc(self->mlx_handle);
 		}
 		memory_dealloc(self);
+		exit(EXIT_SUCCESS);
 	}
+	exit(EXIT_FAILURE);
 	return (NULL);
 }

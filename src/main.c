@@ -12,21 +12,23 @@
 
 #include "../include/fdf.h"
 
-bool check_extension(const char *const file_name, const char *const extension)
+bool	check_extension(const char *const file_name,
+		const char *const extension)
 {
-	const uint64_t file_name_len = string_length(file_name);
-	const uint64_t extension_len = string_length(extension);
+	const uint64_t	file_name_len = string_length(file_name);
+	const uint64_t	extension_len = string_length(extension);
 
 	if (file_name_len <= extension_len)
 		return (false);
-	if (string_compare(&file_name[file_name_len - extension_len], extension) != 0)
+	if (string_compare(&file_name[file_name_len - extension_len],
+			extension) != 0)
 		return (false);
 	return (true);
 }
 
-int32_t main(const int32_t ac, const char *const *const av)
+int32_t	main(const int32_t ac, const char *const *const av)
 {
-	t_fdf_container *self;
+	t_fdf_container	*self;
 
 	if (ac == 2 && check_extension(av[1], ".fdf"))
 	{
