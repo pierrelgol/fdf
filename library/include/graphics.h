@@ -90,7 +90,7 @@ int32_t color2_lerp(t_vec2 at, t_vec2 start, t_vec2 end, const t_color2 start_en
 t_color2 color2(const int32_t argb1, const int32_t argb2);
 
 // Vector operations
-t_vec2  vec2(const int32_t x, const int32_t y);
+t_vec2  vec2(const float_t x, const float_t y);
 t_vec2  vec2_add(const t_vec2 a, const t_vec2 b);
 t_vec2  vec2_sub(const t_vec2 a, const t_vec2 b);
 t_vec2  vec2_mul(const t_vec2 a, const t_vec2 b);
@@ -100,11 +100,12 @@ float_t vec2_length_squared(t_vec2 v);
 t_vec2  vec2_normalize(t_vec2 v);
 void    vec2_normalized(t_vec2 *v);
 
-t_vec3 vec3(const int32_t x, const int32_t y, const int32_t z);
+t_vec3 vec3(const float_t x, const float_t y, const float_t z);
 t_vec3 vec3_add(t_vec3 a, t_vec3 b);
 t_vec3 vec3_sub(t_vec3 a, t_vec3 b);
 t_vec3 vec3_mul(t_vec3 a, t_vec3 b);
 t_vec3 vec3_div(t_vec3 a, t_vec3 b);
+t_vec3 vec3_delta(const t_vec3 min, const t_vec3 max);
 
 float_t vec3_length(t_vec3 v);
 float_t vec3_length_squared(t_vec3 v);

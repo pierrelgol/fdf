@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 CC = clang
-CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3
-# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
+# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3
+CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
 LIBRARY_DIR = library
 MLX_DIR = mlx
 SRC_DIR = src

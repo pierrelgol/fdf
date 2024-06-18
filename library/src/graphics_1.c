@@ -12,7 +12,7 @@
 
 #include "graphics.h"
 
-t_vec2 vec2(const int32_t x, const int32_t y)
+t_vec2 vec2(const float_t x, const float_t y)
 {
 	return (t_vec2){
 	    .x = x,

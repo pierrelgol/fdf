@@ -40,10 +40,15 @@
 #define WIDTH 1280
 #define HEIGHT 720
 
-#define STEP 10.0f
+#define MOVE_STEP 10.0f
+#define ZOOM_STEP 1.0f
+#define ZAMP_STEP 1.0f
+#define ROTA_STEP 0.25f
 
 typedef struct s_file          t_file;
 typedef struct s_parser        t_parser;
+typedef struct s_map           t_map;
+typedef struct s_camera        t_camera;
 typedef struct s_renderer      t_renderer;
 typedef struct s_fdf_container t_fdf_container;
 
@@ -59,36 +64,75 @@ struct s_parser
 {
 	t_file   *file;
 	char    **rows;
-	int32_t   parsed_width;
-	int32_t   parsed_height;
-	int32_t  *parsed_zaxis_buffer;
-	int32_t  *parsed_color_buffer;
-	int32_t **zaxis_matrix;
-	int32_t **color_matrix;
+	int32_t   width;
+	int32_t   height;
+	t_vec3    map_min;
+	t_vec3    map_max;
+	t_vec3   *map_coords_buffer;
+	int32_t  *map_colors_buffer;
+	t_vec3  **map_coords;
+	int32_t **map_colors;
+};
+
+struct s_map
+{
+	t_parser *inputs;
+	int32_t   height;
+	int32_t   width;
+	t_vec3    world_min;
+	t_vec3    world_max;
+
+	t_vec3   *world_coords_buffer;
+	int32_t  *world_colors_buffer;
+	t_vec3  **world_coords;
+	int32_t **world_colors;
+};
+
+struct s_camera
+{
+	t_vec3  position;
+	t_vec3  rotation;
+	float_t zoom;
+	float_t amplitude;
 };
 
 struct s_renderer
 {
-	int32_t  height;
-	int32_t  width;
+	void   *mlx_handle;
+	void   *win_handle;
+	void   *img_handle;
+	char   *img_buffer;
+	int32_t img_size;
+	int32_t img_bpp;
+	int32_t img_endian;
 
-	t_vec3  *world_buffer;
-	t_vec3 **world_coord;
-	t_vec2	*screen_buffer;
-	t_vec2 **screen_coord;
+	t_parser *inputs;
+	t_map    *world_data;
+	t_camera *camera;
+
+	t_vec3   *world_coords_buffer;
+	int32_t  *world_colors_buffer;
+	t_vec3  **world_coords;
+	int32_t **world_colors;
+
+	t_vec2   *screen_coords_buffer;
+	int32_t  *screen_colors_buffer;
+	t_vec2  **screen_coords;
+	int32_t **screen_colors;
 };
 
 struct s_fdf_container
 {
-	void       *mlx_handle;
-	void       *win_handle;
-	void       *img_handle;
-	char       *img_buffer;
-	int32_t     img_size;
-	int32_t     img_bpp;
-	int32_t     img_endian;
-	t_renderer *renderer;
-	t_parser   *parser;
+	void     *mlx_handle;
+	void     *win_handle;
+	void     *img_handle;
+	char     *img_buffer;
+	int32_t   img_size;
+	int32_t   img_bpp;
+	int32_t   img_endian;
+	t_map    *renderer;
+	t_camera *camera;
+	t_parser *parser;
 };
 
 #endif

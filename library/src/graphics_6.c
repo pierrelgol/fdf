@@ -44,3 +44,25 @@ t_color2 color2(const int32_t argb1, const int32_t argb2)
 	result.argb[1] = argb2;
 	return (result);
 }
+
+t_vec3 vec3_delta(const t_vec3 min, const t_vec3 max)
+{
+	t_vec3 delta;
+
+	if ((max.x - min.x) == 0)
+		delta.x = 1.0f;
+	else
+		delta.x = max.x - min.x;
+
+	if ((max.y - min.y) == 0)
+		delta.y = 1.0f;
+	else
+		delta.y = max.y - min.y;
+
+	if ((max.z - min.z) == 0)
+		delta.z = 1.0f;
+	else
+		delta.z = max.z - min.z;
+	return (delta);
+}
+

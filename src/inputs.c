@@ -18,69 +18,57 @@ int32_t inputs_on_program_exit(void *const handle)
 	return (false);
 }
 
-int32_t inputs_movement(const int32_t keycode, void *const handle)
+int32_t inputs_movement(const int32_t keycode, t_camera *const camera)
 {
-
-	(void)keycode;
-	(void)handle;
-	// if (keycode == 65361)
-	// 	self->renderer->position.x -= 10;
-	// else if (keycode == 65363)
-	// 	self->renderer->position.x += 10;
-	// else if (keycode == 65362)
-	// 	self->renderer->position.y -= 10;
-	// else if (keycode == 65364)
-	// 	self->renderer->position.y += 10;
-	// else if (keycode == 45)
-	// 	self->renderer->position.z -= 10;
-	// else if (keycode == 61)
-	// 	self->renderer->position.z += 10;
-	// else
-	// 	return (false);
+	if (keycode == 65361)
+		camera_update_position(camera, vec3(-MOVE_STEP, 0, 0));
+	else if (keycode == 65363)
+		camera_update_position(camera, vec3(MOVE_STEP, 0, 0));
+	else if (keycode == 65362)
+		camera_update_position(camera, vec3(0, -MOVE_STEP, 0));
+	else if (keycode == 65364)
+		camera_update_position(camera, vec3(0, MOVE_STEP, 0));
+	else if (keycode == 45)
+		camera_update_zoom(camera, -ZOOM_STEP);
+	else if (keycode == 61)
+		camera_update_zoom(camera, ZOOM_STEP);
+	else
+		return (false);
 	return (true);
 }
 
-int32_t inputs_rotation(const int32_t keycode, void *const handle)
+int32_t inputs_rotation(const int32_t keycode, t_camera *const camera)
 {
-
-	(void)keycode;
-	(void)handle;
-	// self = (t_fdf_container *) handle;
-	// o = &self->renderer->orientation;
-	// if (keycode == 113)
-	// 	o->x = ((o->x + 1) % 100);
-	// else if (keycode == 101)
-	// 	o->x = ((o->x - 1) % 100);
-	// else if (keycode == 119)
-	// 	o->y = ((o->y + 1) % 100);
-	// else if (keycode == 115)
-	// 	o->y = ((o->y - 1) % 100);
-	// else if (keycode == 97)
-	// 	o->z = ((o->z - 1) % 100);
-	// else if (keycode == 100)
-	// 	o->z = ((o->z - 1) % 100);
-	// else
-	// 	return (false);
+	if (keycode == 113)
+		camera_update_rotation(camera, vec3(-ROTA_STEP, 0, 0));
+	else if (keycode == 101)
+		camera_update_rotation(camera, vec3(ROTA_STEP, 0, 0));
+	else if (keycode == 119)
+		camera_update_rotation(camera, vec3(0, -ROTA_STEP, 0));
+	else if (keycode == 115)
+		camera_update_rotation(camera, vec3(0, ROTA_STEP, 0));
+	else if (keycode == 97)
+		camera_update_rotation(camera, vec3(0, 0, -ROTA_STEP));
+	else if (keycode == 100)
+		camera_update_rotation(camera, vec3(0, 0, ROTA_STEP));
+	else
+		return (false);
 	return (true);
 }
 
-int32_t inputs_params(const int32_t keycode, void *const handle)
+int32_t inputs_params(const int32_t keycode, t_camera *const camera)
 {
-
-	(void)keycode;
-	(void)handle;
-	// self = (t_fdf_container *) handle;
-	// if (keycode == 91 && self->renderer->offset_zoom >= 0.1f)
-	// 	self->renderer->offset_zoom -= 0.1f;
-	// else if (keycode == 93 && self->renderer->offset_zoom < 100.0f)
-	// 	self->renderer->offset_zoom += 0.1f;
-	// else if (keycode == 106 && self->renderer->z_amplitude >= -10.0f)
-	// 	self->renderer->z_amplitude -= 0.1f;
-	// else if (keycode == 107 && self->renderer->z_amplitude < 100.0f)
-	// 	self->renderer->z_amplitude += 0.1f;
-	// else
-	// 	return (0);
-	return (1);
+	if (keycode == 91)
+		camera_update_zoom(camera, -ZOOM_STEP);
+	else if (keycode == 93)
+		camera_update_zoom(camera, +ZOOM_STEP);
+	else if (keycode == 106)
+		camera_update_amplitude(camera, -ZAMP_STEP);
+	else if (keycode == 107)
+		camera_update_amplitude(camera, ZAMP_STEP);
+	else
+		return (false);
+	return (true);
 }
 
 int32_t inputs_on_key_press(const int32_t keycode, void *const handle)
@@ -91,11 +79,11 @@ int32_t inputs_on_key_press(const int32_t keycode, void *const handle)
 	printf("keycode :%d\n", keycode);
 	if (keycode == XK_Escape)
 		inputs_on_program_exit(handle);
-	if (inputs_movement(keycode, handle))
+	if (inputs_movement(keycode, self->camera))
 		fdf_container_run(self);
-	else if (inputs_rotation(keycode, handle))
+	else if (inputs_rotation(keycode, self->camera))
 		fdf_container_run(self);
-	else if (inputs_params(keycode, handle))
+	else if (inputs_params(keycode, self->camera))
 		fdf_container_run(self);
 	else
 		return (0);
