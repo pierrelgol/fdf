@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-static int32_t	char_to_digit(const char ch)
+static inline int32_t	char_to_digit(const char ch)
 {
 	if (ch >= '0' && ch <= '9')
 		return (ch - '0');

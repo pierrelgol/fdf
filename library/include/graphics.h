@@ -25,14 +25,14 @@ typedef union u_color2 t_color2;
 union u_vec2
 {
 	float_t data[2];
-	union
+	struct
 	{
-		struct
+		union
 		{
 			float_t x;
 			float_t u;
 		};
-		struct
+		union
 		{
 			float_t y;
 			float_t v;
@@ -43,19 +43,19 @@ union u_vec2
 union u_vec3
 {
 	float_t data[3];
-	union
+	struct
 	{
-		struct
+		union
 		{
 			float_t x;
 			float_t u;
 		};
-		struct
+		union
 		{
 			float_t y;
 			float_t v;
 		};
-		struct
+		union
 		{
 			float_t z;
 			float_t t;

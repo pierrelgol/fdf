@@ -12,7 +12,7 @@
 
 #include "graphics.h"
 
-t_vec2 vec2(const float_t x, const float_t y)
+inline t_vec2 vec2(const float_t x, const float_t y)
 {
 	return (t_vec2){
 	    .x = x,
@@ -20,7 +20,7 @@ t_vec2 vec2(const float_t x, const float_t y)
 	};
 }
 
-t_vec2 vec2_add(const t_vec2 a, const t_vec2 b)
+inline t_vec2 vec2_add(const t_vec2 a, const t_vec2 b)
 {
 	return (t_vec2){
 	    .x = a.x + b.x,
@@ -28,7 +28,7 @@ t_vec2 vec2_add(const t_vec2 a, const t_vec2 b)
 	};
 }
 
-t_vec2 vec2_sub(const t_vec2 a, const t_vec2 b)
+inline t_vec2 vec2_sub(const t_vec2 a, const t_vec2 b)
 {
 	return (t_vec2){
 	    .x = a.x - b.x,
@@ -36,7 +36,7 @@ t_vec2 vec2_sub(const t_vec2 a, const t_vec2 b)
 	};
 }
 
-t_vec2 vec2_mul(const t_vec2 a, const t_vec2 b)
+inline t_vec2 vec2_mul(const t_vec2 a, const t_vec2 b)
 {
 	return (t_vec2){
 	    .x = a.x * b.x,
@@ -45,7 +45,7 @@ t_vec2 vec2_mul(const t_vec2 a, const t_vec2 b)
 	
 }
 
-t_vec2 vec2_div(const t_vec2 a, const t_vec2 b)
+inline t_vec2 vec2_div(const t_vec2 a, const t_vec2 b)
 {
 	return (t_vec2){
 	    .x = a.x * b.x,

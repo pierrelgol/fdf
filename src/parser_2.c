@@ -17,13 +17,10 @@ t_vec3 parser_parse_entry(char *const entry, const int32_t x, const int32_t y, i
 	char   *maybe_color;
 	int32_t z;
 
-	if (!entry)
-	{
-		*out_color = DEFAULT_COLOR;
-		return (vec3(x, y, 1));
-	}
+	z = 0;
+	maybe_color = NULL;
 	z = string_to_base(entry, &maybe_color, 10);
-	if (maybe_color)
+	if (maybe_color && *maybe_color != '\0')
 		*out_color = string_to_base(maybe_color, &maybe_color, 16);
 	else
 		*out_color = DEFAULT_COLOR;
@@ -32,6 +29,7 @@ t_vec3 parser_parse_entry(char *const entry, const int32_t x, const int32_t y, i
 
 bool parser_parse(t_parser *const self, const int32_t width, const int32_t height, char **rows)
 {
+	int32_t token_count;
 	char  **entries;
 	int32_t y;
 	int32_t x;
@@ -41,7 +39,10 @@ bool parser_parse(t_parser *const self, const int32_t width, const int32_t heigh
 	{
 		x = 0;
 		entries = string_tokenize(rows[y], ' ');
-		while (x < width)
+		token_count = string_count(rows[y], " ");
+		if (token_count != width)
+			return (false);
+		while (x < (width -1) )
 		{
 			self->map_coords[y][x] = parser_parse_entry(entries[x], x, y, &self->map_colors[y][x]);
 			++x;

@@ -49,6 +49,8 @@ t_vec3    camera_get_zoom(const t_camera *const self);
 t_vec3    camera_get_amplitude(const t_camera *const self);
 t_camera *camera_destroy(t_camera *const self);
 
+void	camera_print(const t_camera *const self);
+
 /* MAP */
 t_map *map_create(t_parser *const config, const int32_t width, const int32_t height);
 t_map *map_alloc(t_map *const self, t_parser *const config, const int32_t width, const int32_t height);
@@ -57,10 +59,19 @@ t_map *map_destroy(t_map *const self);
 
 /* RENDERER */
 
-t_renderer *renderer_create(t_map *const map, const int32_t width, const int32_t height);
-t_renderer *renderer_init(t_renderer *const self, const int32_t width, const int32_t height);
-t_renderer *renderer_deinit(t_renderer *const self);
+t_renderer *renderer_create(t_fdf_container *const fdf, t_camera *const camera, t_map *const map);
 t_renderer *renderer_destroy(t_renderer *const self);
+
+void	renderer_init_world_data(t_renderer *const self, const int32_t width, const int32_t height);
+
+/* DRAW */
+void draw_clear(t_renderer *const self);
+void draw(t_renderer *const self);
+void draw_line(t_renderer *const self, t_vec2 p0, t_vec2 p1, const t_vec2 c);
+void draw_pixel(t_renderer *const self, const t_vec2 pos, const int32_t color);
+// void draw_pixel_2(uint32_t *const img_buffer, const t_vec2 pos, const int32_t color);
+
+
 
 /* CONTAINER */
 t_fdf_container *fdf_container_create(const char *const file_name);
@@ -70,5 +81,6 @@ t_fdf_container *fdf_container_destroy(t_fdf_container *const self);
 
 /* UTILS */
 int64_t string_to_base(const char *str, char **endptr, const int32_t base);
+void vec3_print(const char *label, const t_vec3 vec);
 
 #endif

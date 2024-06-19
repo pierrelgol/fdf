@@ -12,12 +12,13 @@
 
 #include "fdf.h"
 
-static void map_normalize_world_coords(t_map *const self, const int32_t width, const int32_t height)
+static void	map_normalize_world_coords(t_map *const self, const int32_t width,
+		const int32_t height)
 {
-	t_vec3  delta;
-	t_vec3  coord;
-	int32_t y;
-	int32_t x;
+	t_vec3	delta;
+	t_vec3	coord;
+	int32_t	y;
+	int32_t	x;
 
 	y = 0;
 	delta = vec3_delta(self->world_min, self->world_max);
@@ -37,9 +38,10 @@ static void map_normalize_world_coords(t_map *const self, const int32_t width, c
 	}
 }
 
-t_map *map_alloc(t_map *const self, t_parser *const config, const int32_t width, const int32_t height)
+t_map	*map_alloc(t_map *const self, t_parser *const config,
+		const int32_t width, const int32_t height)
 {
-	int32_t y;
+	int32_t	y;
 
 	self->world_colors_buffer = memory_alloc(width * height * sizeof(int32_t));
 	if (!self->world_colors_buffer)
@@ -53,8 +55,10 @@ t_map *map_alloc(t_map *const self, t_parser *const config, const int32_t width,
 	self->world_coords = memory_alloc(height * sizeof(t_vec3 *));
 	if (!self->world_coords)
 		return (NULL);
-	memory_copy(self->world_colors_buffer, config->map_colors_buffer, width * height * sizeof(int32_t));
-	memory_copy(self->world_coords_buffer, config->map_coords_buffer, width * height * sizeof(t_vec3));
+	memory_copy(self->world_colors_buffer, config->map_colors_buffer, width
+		* height * sizeof(int32_t));
+	memory_copy(self->world_coords_buffer, config->map_coords_buffer, width
+		* height * sizeof(t_vec3));
 	y = 0;
 	while (y < height)
 	{
@@ -65,11 +69,12 @@ t_map *map_alloc(t_map *const self, t_parser *const config, const int32_t width,
 	return (self);
 }
 
-t_map *map_create(t_parser *const config, const int32_t width, const int32_t height)
+t_map	*map_create(t_parser *const config, const int32_t width,
+		const int32_t height)
 {
-	t_map *self;
+	t_map	*self;
 
-	self = (t_map *) memory_alloc(sizeof(t_map));
+	self = (t_map *)memory_alloc(sizeof(t_map));
 	if (!self)
 		return (NULL);
 	self->height = height;
@@ -83,15 +88,16 @@ t_map *map_create(t_parser *const config, const int32_t width, const int32_t hei
 	return (self);
 }
 
-t_map *map_clone(t_map *const self)
+t_map	*map_clone(t_map *const self)
 {
 	return (map_create(self->inputs, self->width, self->height));
 }
 
-t_map *map_destroy(t_map *const self)
+t_map	*map_destroy(t_map *const self)
 {
 	if (self)
 	{
+		void map_print(t_map *const self);
 		if (self->world_colors_buffer)
 			memory_dealloc(self->world_colors_buffer);
 		if (self->world_coords_buffer)
@@ -103,4 +109,15 @@ t_map *map_destroy(t_map *const self)
 		memory_dealloc(self);
 	}
 	return (NULL);
+}
+
+void	map_print(t_map *const self)
+{
+	for (int i = 0; i < self->height; ++i)
+	{
+		for (int j = 0; j < self->width; ++j)
+		{
+			vec3_print("vec :", self->world_coords[i][j]);
+		}
+	}
 }
