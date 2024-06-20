@@ -56,9 +56,9 @@ int32_t	inputs_rotation(const int32_t keycode, t_camera *const camera)
 
 int32_t	inputs_params(const int32_t keycode, t_camera *const camera)
 {
-	if (keycode == XK_minus)
+	if (keycode == XK_z)
 		camera_update_zoom(camera, -ZOOM_STEP);
-	else if (keycode == XK_plus)
+	else if (keycode == XK_x)
 		camera_update_zoom(camera, +ZOOM_STEP);
 	else if (keycode == XK_o)
 		camera_update_amplitude(camera, -ZAMP_STEP);

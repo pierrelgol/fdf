@@ -62,14 +62,15 @@ t_map *map_destroy(t_map *const self);
 t_renderer *renderer_create(t_fdf_container *const fdf, t_camera *const camera, t_map *const map);
 t_renderer *renderer_destroy(t_renderer *const self);
 
+void renderer_init_frame_data(t_renderer *const self, const int32_t width, const int32_t height);
 void	renderer_init_world_data(t_renderer *const self, const int32_t width, const int32_t height);
+void renderer_render(t_renderer *const self, const int32_t width, const int32_t height);
 
 /* DRAW */
 void draw_clear(t_renderer *const self);
-void draw(t_renderer *const self);
-void draw_line(t_renderer *const self, t_vec2 p0, t_vec2 p1, const t_vec2 c);
+void draw(t_renderer *const self, const int32_t height, const int32_t width);
+void draw_line(t_renderer *const self, t_vec2 p0, t_vec2 p1, t_color2 c2);
 void draw_pixel(t_renderer *const self, const t_vec2 pos, const int32_t color);
-// void draw_pixel_2(uint32_t *const img_buffer, const t_vec2 pos, const int32_t color);
 
 
 
@@ -83,4 +84,6 @@ t_fdf_container *fdf_container_destroy(t_fdf_container *const self);
 int64_t string_to_base(const char *str, char **endptr, const int32_t base);
 void vec3_print(const char *label, const t_vec3 vec);
 
+void	print_vec_buffer(t_vec3 **buffer, int32_t width, int32_t height);
+void	print_vec_buffer2(t_vec2 **buffer, int32_t width, int32_t height);
 #endif

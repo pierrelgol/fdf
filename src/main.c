@@ -38,12 +38,6 @@ int32_t	main(const int32_t ac, const char *const *const av)
 			print("fdf_container : creation failure\n");
 			return (EXIT_FAILURE);
 		}
-		if (!fdf_container_init(self))
-		{
-			print("fdf_container : initialization failure\n");
-			self = fdf_container_destroy(self);
-			return (EXIT_FAILURE);
-		}
 		if (fdf_container_run(self))
 		{
 			print("fdf_container : runtime failure\n");

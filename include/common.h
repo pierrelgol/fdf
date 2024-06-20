@@ -37,13 +37,13 @@
 #define MOUSE_RIGHT_BUTTON 4
 #define FILE_RSIZE 1024
 #define DEFAULT_COLOR 0x00FF0000
-#define WIDTH 800
-#define HEIGHT 600
+#define WIDTH 1920
+#define HEIGHT 1080
 
-#define MOVE_STEP 1.0f
+#define MOVE_STEP 20.0f
 #define ZOOM_STEP 1.0f
 #define ZAMP_STEP 1.0f
-#define ROTA_STEP 0.25f
+#define ROTA_STEP 1.0f
 
 typedef struct s_file          t_file;
 typedef struct s_parser        t_parser;
@@ -116,6 +116,24 @@ struct s_renderer
 	t_vec3  **world_coords;
 	int32_t **world_colors;
 
+	t_vec3 camera_zoom;
+	t_vec3 camera_amplitude;
+	t_vec3 camera_position;
+	t_vec3 camera_rotation;
+	t_vec3 screen_center;
+
+	double cos_pitch;
+	double sin_pitch;
+	double cos_yaw;
+	double sin_yaw;
+	double cos_roll;
+	double sin_roll;
+	double zoom;
+	double cos30;
+	double sin30;
+	double map_center_x;
+	double map_center_y;
+
 	t_vec2   *screen_coords_buffer;
 	int32_t  *screen_colors_buffer;
 	t_vec2  **screen_coords;
@@ -124,16 +142,16 @@ struct s_renderer
 
 struct s_fdf_container
 {
-	void     *mlx_handle;
-	void     *win_handle;
-	void     *img_handle;
-	char     *img_buffer;
-	int32_t   img_size;
-	int32_t   img_bpp;
-	int32_t   img_endian;
-	t_camera *camera;
-	t_parser *parser;
-	t_map    *map;
+	void       *mlx_handle;
+	void       *win_handle;
+	void       *img_handle;
+	char       *img_buffer;
+	int32_t     img_size;
+	int32_t     img_bpp;
+	int32_t     img_endian;
+	t_camera   *camera;
+	t_parser   *parser;
+	t_map      *map;
 	t_renderer *renderer;
 };
 

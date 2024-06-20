@@ -22,19 +22,48 @@ t_color color(const int32_t argb)
 	};
 }
 
+// int32_t color2_lerp(t_vec2 at, t_vec2 start, t_vec2 end, const t_color2 start_end)
+// {
+// 	const int32_t start_color = start_end.argb[0];
+// 	const int32_t end_color = start_end.argb[1];
+// 	const float_t alpha = (at.x - start.x) / (end.x - start.x);
+
+// 	const t_color result = (t_color){
+// 	    .a = (1.0f - alpha) * ((start_color >> 24) & 0xFF) + alpha * ((end_color >> 24) & 0xFF),
+// 	    .r = (1.0f - alpha) * ((start_color >> 16) & 0xFF) + alpha * ((end_color >> 16) & 0xFF),
+// 	    .g = (1.0f - alpha) * ((start_color >> 8) & 0xFF) + alpha * ((end_color >> 8) & 0xFF),
+// 	    .b = (1.0f - alpha) * (start_color & 0xFF) + alpha * (end_color & 0xFF),
+// 	};
+// 	return (result.argb);
+// }
+
 int32_t color2_lerp(t_vec2 at, t_vec2 start, t_vec2 end, const t_color2 start_end)
 {
-	const int32_t start_color = start_end.argb[0];
-	const int32_t end_color = start_end.argb[1];
-	const float_t alpha = (at.x - start.x) / (end.x - start.x);
+    const int32_t start_color = start_end.argb[0];
+    const int32_t end_color = start_end.argb[1];
 
-	const t_color result = (t_color){
-	    .a = (1.0f - alpha) * ((start_color >> 24) & 0xFF) + alpha * ((end_color >> 24) & 0xFF),
-	    .r = (1.0f - alpha) * ((start_color >> 16) & 0xFF) + alpha * ((end_color >> 16) & 0xFF),
-	    .g = (1.0f - alpha) * ((start_color >> 8) & 0xFF) + alpha * ((end_color >> 8) & 0xFF),
-	    .b = (1.0f - alpha) * (start_color & 0xFF) + alpha * (end_color & 0xFF),
-	};
-	return (result.argb);
+    // Avoid division by zero
+    float_t denominator = end.x - start.x;
+    if (fabsf(denominator) < 1e-6)
+    {
+        // If the start and end points are the same, return the start color
+        return start_color;
+    }
+
+    const float_t alpha = (at.x - start.x) / denominator;
+
+    // Clamp alpha to [0, 1] to avoid extrapolation issues
+    float_t clamped_alpha = fmaxf(0.0f, fminf(1.0f, alpha));
+
+    const t_color result = (t_color){
+        .a = (uint8_t)((1.0f - clamped_alpha) * ((start_color >> 24) & 0xFF) + clamped_alpha * ((end_color >> 24) & 0xFF)),
+        .r = (uint8_t)((1.0f - clamped_alpha) * ((start_color >> 16) & 0xFF) + clamped_alpha * ((end_color >> 16) & 0xFF)),
+        .g = (uint8_t)((1.0f - clamped_alpha) * ((start_color >> 8) & 0xFF) + clamped_alpha * ((end_color >> 8) & 0xFF)),
+        .b = (uint8_t)((1.0f - clamped_alpha) * (start_color & 0xFF) + clamped_alpha * (end_color & 0xFF)),
+    };
+
+    // Combine the color components into a single integer
+    return (result.a << 24) | (result.r << 16) | (result.g << 8) | result.b;
 }
 
 t_color2 color2(const int32_t argb1, const int32_t argb2)

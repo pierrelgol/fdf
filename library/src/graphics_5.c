@@ -26,21 +26,21 @@ void vec3_normalized(t_vec3 *v)
 
 t_vec3 vec3_rotate_x(t_vec3 v, float angle)
 {
-	const float cos_a = cos(angle);
-	const float sin_a = sin(angle);
-	return (vec3(v.x, v.y * cos_a - v.z * sin_a, v.y * sin_a + v.z * cos_a));
+    const float cos_a = cos(angle);
+    const float sin_a = sin(angle);
+    return (vec3(v.x, v.y * cos_a - v.z * sin_a, v.y * sin_a + v.z * cos_a));
 }
 
 t_vec3 vec3_rotate_y(t_vec3 v, float angle)
 {
-	const float cos_a = cos(angle);
-	const float sin_a = sin(angle);
-	return (vec3(v.x * cos_a + v.z * sin_a, v.y, -v.x * sin_a + v.z * cos_a));
+    const float cos_a = cos(angle);
+    const float sin_a = sin(angle);
+    return (vec3(v.x * cos_a + v.z * sin_a, v.y, -v.x * sin_a + v.z * cos_a));
 }
 
 t_vec3 vec3_rotate_z(t_vec3 v, float angle)
 {
-	const float cos_a = cos(angle);
-	const float sin_a = sin(angle);
-	return (vec3(v.x * cos_a - v.y * sin_a, v.x * sin_a + v.y * cos_a, v.z));
+    const float cos_a = cos(angle);
+    const float sin_a = sin(angle);
+    return (vec3(v.x * cos_a - v.y * sin_a, v.x * sin_a + v.y * cos_a, v.z));
 }

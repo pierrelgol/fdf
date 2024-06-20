@@ -27,12 +27,14 @@ t_fdf_container	*fdf_container_create(const char *const file_name)
 	if (!parser_parse(self->parser, parser->width, parser->height,
 			parser->rows))
 		return (fdf_container_destroy(self));
-	self->camera = camera_create(vec3(100, 100, 1), vec3(0.0f, 0.0f, 0.0f),
+	self->camera = camera_create(vec3(WIDTH / 2.0f, HEIGHT / 2.0f, 1.0f), vec3(0.0f, 0.0f, 0.0f),
 			1.0f, 1.0f);
 	if (!self->camera)
 		return (fdf_container_destroy(self));
 	self->map = map_create(parser, parser->width, parser->height);
 	if (!self->map)
+		return (fdf_container_destroy(self));
+	if (!fdf_container_init(self))
 		return (fdf_container_destroy(self));
 	self->renderer = renderer_create(self, self->camera, self->map);
 	if (!self->renderer)
@@ -62,6 +64,9 @@ bool	fdf_container_init(t_fdf_container *const self)
 
 bool	fdf_container_run(t_fdf_container *const self)
 {
+	renderer_init_frame_data(self->renderer, self->renderer->width, self->renderer->height);
+	renderer_init_world_data(self->renderer, self->renderer->width, self->renderer->height);
+	renderer_render(self->renderer, self->renderer->width, self->renderer->height);
 	mlx_hook(self->win_handle, 17, 0, inputs_on_program_exit, self);
 	mlx_key_hook(self->win_handle, inputs_on_key_press, self);
 	mlx_loop(self->mlx_handle);

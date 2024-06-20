@@ -42,7 +42,7 @@ bool parser_parse(t_parser *const self, const int32_t width, const int32_t heigh
 		token_count = string_count(rows[y], " ");
 		if (token_count != width)
 			return (false);
-		while (x < (width -1) )
+		while (x < width)
 		{
 			self->map_coords[y][x] = parser_parse_entry(entries[x], x, y, &self->map_colors[y][x]);
 			++x;

@@ -23,7 +23,7 @@ t_vec3	camera_get_rotation(const t_camera *const self)
 
 t_vec3	camera_get_zoom(const t_camera *const self)
 {
-	return (vec3(self->zoom, self->zoom, self->zoom));
+	return (vec3(1, 1, self->zoom));
 }
 
 t_vec3	camera_get_amplitude(const t_camera *const self)
