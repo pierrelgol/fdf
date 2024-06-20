@@ -45,8 +45,15 @@
 typedef struct s_file          t_file;
 typedef struct s_parser        t_parser;
 typedef struct s_renderer      t_renderer;
+typedef struct s_camera        t_camera;
 typedef struct s_fdf_container t_fdf_container;
 
+typedef enum e_projection_type
+{
+	PROJECTION_ISO,
+	PROJECTION_ORT,
+
+} t_projection_type;
 struct s_file
 {
 	char   *file_name;
@@ -59,14 +66,34 @@ struct s_parser
 {
 	t_file   *file;
 	char    **rows;
-	int32_t   parsed_width;
-	int32_t   parsed_height;
-	int32_t  *parsed_zaxis_buffer;
-	int32_t  *parsed_color_buffer;
+	char    **cols;
+	int32_t   width;
+	int32_t   height;
+	int32_t  *zaxis_buffer;
+	int32_t  *color_buffer;
 	int32_t **zaxis_matrix;
 	int32_t **color_matrix;
 };
 
+struct s_camera
+{
+	t_vec3            cam_position;
+	double            deg_pitch;
+	double            deg_yaw;
+	double            deg_roll;
+	double            rad_pitch;
+	double            rad_yaw;
+	double            rad_roll;
+	double            cos_pitch;
+	double            sin_pitch;
+	double            cos_yaw;
+	double            sin_yaw;
+	double            cos_roll;
+	double            sin_roll;
+	float_t           z_scale;
+	float_t           zoom;
+	t_projection_type projection;
+};
 
 struct s_renderer
 {
@@ -79,45 +106,32 @@ struct s_renderer
 	int32_t   img_bpp;
 	int32_t   img_endian;
 
-	t_vec3	position;
-	t_vec3	orientation;
-	float_t offset_zoom;
-	float_t z_amplitude;
-
-	t_vec3 cam_position;
-	t_vec3 cam_target;
-	t_vec3 cam_up;
-	float  cam_fov;
-	float  cam_aspect_ratio;
-	float  cam_near_plane;
-	float  cam_far_plane;
-
+	// NEW
+	int32_t   height;
+	int32_t   width;
 	float_t   ratio_w;
 	float_t   ratio_h;
-	int32_t   world_width;
-	int32_t   world_height;
+	t_camera *camera;
+	// OLD
+
 	t_vec3   *world_coord_buffer;
 	int32_t  *world_color_buffer;
 	t_vec3  **world_coord;
 	int32_t **world_color;
 
-	int32_t   screen_width;
-	int32_t   screen_height;
 	t_vec2   *screen_coord_buffer;
 	int32_t  *screen_color_buffer;
 	t_vec2  **screen_coord;
 	int32_t **screen_color;
 
-	t_vec3 p;
-	int32_t	err1;
-	int32_t	err2;
-	double cos_pitch;
-	double sin_pitch;
-	double cos_yaw;
-	double sin_yaw;
-	double cos_roll;
-	double sin_roll;
-	double zoom;
+	t_vec2 e;
+	t_vec2 d;
+	t_vec2 s;
+	t_vec2 p;
+	t_vec3 coord;
+	double temp_x;
+	double temp_y;
+	double temp_z;
 	double relative_x;
 	double relative_y;
 	double relative_z;
@@ -126,19 +140,13 @@ struct s_renderer
 	double scale_factor;
 	double screen_x;
 	double screen_y;
-	double normalized_x;
-	double normalized_y;
-	double temp_x;
-	double temp_y;
-	double temp_z;
-	bool    is_dirty;
+	bool   is_dirty;
 };
 
 struct s_renderer_2
 {
-	int32_t	height;
-	int32_t	width;
-	
+	int32_t height;
+	int32_t width;
 };
 
 struct s_fdf_container
@@ -152,6 +160,7 @@ struct s_fdf_container
 	int32_t     img_endian;
 	t_renderer *renderer;
 	t_parser   *parser;
+	t_camera   *camera;
 };
 
 #endif

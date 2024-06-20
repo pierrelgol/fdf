@@ -12,7 +12,7 @@
 
 #include "../include/fdf.h"
 
-static int32_t	char_to_digit(const char ch)
+static int32_t char_to_digit(const char ch)
 {
 	if (ch >= '0' && ch <= '9')
 		return (ch - '0');
@@ -23,10 +23,10 @@ static int32_t	char_to_digit(const char ch)
 	return (0);
 }
 
-int64_t	string_to_base(const char *str, char **endptr, const int32_t base)
+int64_t string_to_base(const char *str, char **endptr, const int32_t base)
 {
-	int64_t	result;
-	bool	negative;
+	int64_t result;
+	bool    negative;
 
 	negative = false;
 	while (is_space(*str))
@@ -44,6 +44,65 @@ int64_t	string_to_base(const char *str, char **endptr, const int32_t base)
 	if (*str == '\0')
 		*endptr = NULL;
 	else
-		*endptr = (char *)str;
+		*endptr = (char *) str;
 	return (((negative) * (-result)) + ((!negative) * (result)));
+}
+
+t_color color_lerp(float_t total_distance, float_t point_distance, t_color color_start, t_color color_end)
+{
+	t_color result;
+	float   t;
+
+	t = point_distance / total_distance;
+	if (t < 0.0f)
+		t = 0.0f;
+	if (t > 1.0f)
+		t = 1.0f;
+	result.a = (uint8_t) ((1 - t) * color_start.a + t * color_end.a);
+	result.r = (uint8_t) ((1 - t) * color_start.r + t * color_end.r);
+	result.g = (uint8_t) ((1 - t) * color_start.g + t * color_end.g);
+	result.b = (uint8_t) ((1 - t) * color_start.b + t * color_end.b);
+	return (result);
+}
+
+void screen_print(t_vec2 **coord, int32_t width, int32_t height)
+{
+	int32_t x;
+	int32_t y;
+	t_vec2  p;
+
+	y = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (x < width)
+		{
+			p = coord[y][x];
+			printf("{%3d,%3d}", p.x, p.y);
+			++x;
+		}
+		printf("\n");
+		++y;
+	}
+}
+
+void world_print(t_vec3 **coord, int32_t width, int32_t height)
+{
+	int32_t x;
+	int32_t y;
+	t_vec3  p;
+
+	y = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (x < width)
+		{
+			p = coord[y][x];
+			printf("{%3d,%3d,%3d}", p.x, p.y, p.z);
+			++x;
+		}
+		printf("\n");
+		++y;
+	}
 }

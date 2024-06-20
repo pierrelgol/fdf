@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 CC = clang
-CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3
-# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
+# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3
+CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
 LIBRARY_DIR = library
 MLX_DIR = mlx
 SRC_DIR = src
@@ -76,6 +76,8 @@ fclean: clean
 	@$(MAKE) -s -C $(LIBRARY_DIR) fclean
 	@rm -f $(LIBRARY_DIR)/libslib.a
 	@rm -f $(MLX_DIR)/libmlx.a
+	@rm -rf .cache 
+	@rm -f compile_commands.json 
 
 re: fclean all
 

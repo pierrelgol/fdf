@@ -14,9 +14,9 @@
       "src/essentials_1.o",
       "src/essentials_1.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_1.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_1.o"
   },
   {
     "arguments": [
@@ -33,9 +33,9 @@
       "src/essentials_2.o",
       "src/essentials_2.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_2.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_2.o"
   },
   {
     "arguments": [
@@ -52,9 +52,9 @@
       "src/essentials_3.o",
       "src/essentials_3.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_3.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_3.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_3.o"
   },
   {
     "arguments": [
@@ -71,9 +71,9 @@
       "src/essentials_4.o",
       "src/essentials_4.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_4.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_4.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_4.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_4.o"
   },
   {
     "arguments": [
@@ -90,9 +90,9 @@
       "src/essentials_5.o",
       "src/essentials_5.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_5.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_5.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_5.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_5.o"
   },
   {
     "arguments": [
@@ -109,9 +109,9 @@
       "src/essentials_6.o",
       "src/essentials_6.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_6.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_6.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_6.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_6.o"
   },
   {
     "arguments": [
@@ -128,9 +128,9 @@
       "src/essentials_7.o",
       "src/essentials_7.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_7.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_7.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_7.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_7.o"
   },
   {
     "arguments": [
@@ -147,9 +147,9 @@
       "src/essentials_8.o",
       "src/essentials_8.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_8.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_8.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_8.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_8.o"
   },
   {
     "arguments": [
@@ -166,9 +166,9 @@
       "src/essentials_9.o",
       "src/essentials_9.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_9.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_9.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_9.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_9.o"
   },
   {
     "arguments": [
@@ -185,9 +185,9 @@
       "src/graphics_1.o",
       "src/graphics_1.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_1.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_1.o"
   },
   {
     "arguments": [
@@ -204,9 +204,9 @@
       "src/graphics_2.o",
       "src/graphics_2.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_2.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_2.o"
   },
   {
     "arguments": [
@@ -223,9 +223,9 @@
       "src/graphics_3.o",
       "src/graphics_3.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_3.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_3.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_3.o"
   },
   {
     "arguments": [
@@ -242,9 +242,9 @@
       "src/graphics_4.o",
       "src/graphics_4.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_4.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_4.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_4.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_4.o"
   },
   {
     "arguments": [
@@ -261,9 +261,9 @@
       "src/graphics_5.o",
       "src/graphics_5.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_5.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_5.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_5.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_5.o"
   },
   {
     "arguments": [
@@ -280,9 +280,9 @@
       "src/graphics_6.o",
       "src/graphics_6.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_6.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_6.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_6.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_6.o"
   },
   {
     "arguments": [
@@ -299,9 +299,9 @@
       "src/graphics_7.o",
       "src/graphics_7.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_7.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_7.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_7.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_7.o"
   },
   {
     "arguments": [
@@ -318,9 +318,9 @@
       "src/print1.o",
       "src/print1.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/print1.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/print1.o"
   },
   {
     "arguments": [
@@ -337,9 +337,9 @@
       "src/print2.o",
       "src/print2.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/print2.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/print2.o"
   },
   {
     "arguments": [
@@ -356,9 +356,9 @@
       "src/print3.o",
       "src/print3.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print3.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/print3.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/print3.o"
   },
   {
     "arguments": [
@@ -375,9 +375,9 @@
       "src/print4.o",
       "src/print4.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print4.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print4.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/print4.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/print4.o"
   },
   {
     "arguments": [
@@ -394,9 +394,9 @@
       "src/vector_1.o",
       "src/vector_1.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_1.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_1.o"
   },
   {
     "arguments": [
@@ -413,9 +413,9 @@
       "src/vector_2.o",
       "src/vector_2.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_2.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_2.o"
   },
   {
     "arguments": [
@@ -432,9 +432,9 @@
       "src/vector_3.o",
       "src/vector_3.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_3.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_3.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_3.o"
   },
   {
     "arguments": [
@@ -451,9 +451,9 @@
       "src/vector_4.o",
       "src/vector_4.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_4.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_4.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_4.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_4.o"
   },
   {
     "arguments": [
@@ -470,9 +470,9 @@
       "src/vector_5.o",
       "src/vector_5.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_5.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_5.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_5.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_5.o"
   },
   {
     "arguments": [
@@ -489,9 +489,9 @@
       "src/vector_6.o",
       "src/vector_6.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_6.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_6.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_6.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_6.o"
   },
   {
     "arguments": [
@@ -508,9 +508,9 @@
       "src/vector_7.o",
       "src/vector_7.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_7.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_7.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_7.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_7.o"
   },
   {
     "arguments": [
@@ -527,30 +527,9 @@
       "src/vector_8.o",
       "src/vector_8.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re/library",
-    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_8.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_8.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Iinclude",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-fsanitize=address",
-      "-fsanitize=integer",
-      "-fsanitize=undefined",
-      "-g3",
-      "-fno-omit-frame-pointer",
-      "-c",
-      "-o",
-      "src/fdf.o",
-      "src/fdf.c"
-    ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/fdf.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/fdf.o"
+    "directory": "/home/pollivie/workspace/fdf_ref/library",
+    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_8.c",
+    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_8.o"
   },
   {
     "arguments": [
@@ -569,9 +548,9 @@
       "src/file.o",
       "src/file.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/file.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/file.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/file.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/file.o"
   },
   {
     "arguments": [
@@ -587,12 +566,33 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/inputs.o",
-      "src/inputs.c"
+      "src/renderer.o",
+      "src/renderer.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/inputs.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/inputs.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/renderer.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/renderer.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/camera.o",
+      "src/camera.c"
+    ],
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/camera.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/camera.o"
   },
   {
     "arguments": [
@@ -611,30 +611,9 @@
       "src/main.o",
       "src/main.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/main.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/main.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Iinclude",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-fsanitize=address",
-      "-fsanitize=integer",
-      "-fsanitize=undefined",
-      "-g3",
-      "-fno-omit-frame-pointer",
-      "-c",
-      "-o",
-      "src/renderer_draw.o",
-      "src/renderer_draw.c"
-    ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/main.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/main.o"
   },
   {
     "arguments": [
@@ -653,9 +632,9 @@
       "src/utils_1.o",
       "src/utils_1.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/utils_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/utils_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/utils_1.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/utils_1.o"
   },
   {
     "arguments": [
@@ -671,12 +650,12 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/parser_1.o",
-      "src/parser_1.c"
+      "src/draw.o",
+      "src/draw.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/parser_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/parser_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/draw.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/draw.o"
   },
   {
     "arguments": [
@@ -692,12 +671,12 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/parser_2.o",
-      "src/parser_2.c"
+      "src/fdf.o",
+      "src/fdf.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/parser_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/parser_2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/fdf.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/fdf.o"
   },
   {
     "arguments": [
@@ -713,12 +692,12 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/renderer_draw_1.o",
-      "src/renderer_draw_1.c"
+      "src/inputs.o",
+      "src/inputs.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_1.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/inputs.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/inputs.o"
   },
   {
     "arguments": [
@@ -734,12 +713,12 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/renderer_draw_2.o",
-      "src/renderer_draw_2.c"
+      "src/parser.o",
+      "src/parser.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_2.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/parser.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/parser.o"
   },
   {
     "arguments": [
@@ -755,74 +734,11 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/renderer_draw_3.o",
-      "src/renderer_draw_3.c"
+      "src/rendering.o",
+      "src/rendering.c"
     ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_draw_3.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Iinclude",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-fsanitize=address",
-      "-fsanitize=integer",
-      "-fsanitize=undefined",
-      "-g3",
-      "-fno-omit-frame-pointer",
-      "-c",
-      "-o",
-      "src/renderer_1.o",
-      "src/renderer_1.c"
-    ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_1.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_1.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Iinclude",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-fsanitize=address",
-      "-fsanitize=integer",
-      "-fsanitize=undefined",
-      "-g3",
-      "-fno-omit-frame-pointer",
-      "-c",
-      "-o",
-      "src/renderer_2.o",
-      "src/renderer_2.c"
-    ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_2.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_2.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-Iinclude",
-      "-Wall",
-      "-Wextra",
-      "-Werror",
-      "-fsanitize=address",
-      "-fsanitize=integer",
-      "-fsanitize=undefined",
-      "-g3",
-      "-fno-omit-frame-pointer",
-      "-c",
-      "-o",
-      "src/renderer_3.o",
-      "src/renderer_3.c"
-    ],
-    "directory": "/home/pollivie/workspace/school/fdf-re",
-    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer_3.c",
-    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer_3.o"
+    "directory": "/home/pollivie/workspace/fdf_ref",
+    "file": "/home/pollivie/workspace/fdf_ref/src/rendering.c",
+    "output": "/home/pollivie/workspace/fdf_ref/src/rendering.o"
   }
 ]
