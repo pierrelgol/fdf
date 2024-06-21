@@ -18,13 +18,13 @@ t_mat4	mat4_identity(void)
 				0, 0, 1)));
 }
 
-float_t	vec2_distance(const t_vec2 v1, const t_vec2 v2)
+float vec2_distance(const t_vec2 a, const t_vec2 b)
 {
-	const float_t	dx = v2.x - v1.x;
-	const float_t	dy = v2.y - v1.y;
-
-	return (sqrt(dx * dx + dy * dy));
+    float dx = a.x - b.x;
+    float dy = a.y - b.y;
+    return sqrtf((dx * dx) + (dy * dy)); // Squared distance
 }
+
 
 float_t	vec3_distance(const t_vec3 v1, const t_vec3 v2)
 {
@@ -32,5 +32,5 @@ float_t	vec3_distance(const t_vec3 v1, const t_vec3 v2)
 	const float_t	dy = v2.y - v1.y;
 	const float_t	dz = v2.z - v1.z;
 
-	return (sqrt(dx * dx + dy * dy + dz * dz));
+	return (sqrtf(dx * dx + dy * dy + dz * dz));
 }

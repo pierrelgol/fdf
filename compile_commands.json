@@ -1,7 +1,7 @@
 [
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -14,13 +14,13 @@
       "src/essentials_1.o",
       "src/essentials_1.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_1.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_1.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_1.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_1.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -33,13 +33,13 @@
       "src/essentials_2.o",
       "src/essentials_2.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_2.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_2.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_2.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_2.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -52,13 +52,13 @@
       "src/essentials_3.o",
       "src/essentials_3.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_3.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_3.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_3.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_3.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -71,13 +71,13 @@
       "src/essentials_4.o",
       "src/essentials_4.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_4.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_4.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_4.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_4.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -90,13 +90,13 @@
       "src/essentials_5.o",
       "src/essentials_5.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_5.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_5.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_5.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_5.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -109,13 +109,13 @@
       "src/essentials_6.o",
       "src/essentials_6.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_6.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_6.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_6.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_6.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -128,13 +128,13 @@
       "src/essentials_7.o",
       "src/essentials_7.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_7.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_7.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_7.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_7.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -147,13 +147,13 @@
       "src/essentials_8.o",
       "src/essentials_8.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_8.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_8.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_8.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_8.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -166,13 +166,13 @@
       "src/essentials_9.o",
       "src/essentials_9.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/essentials_9.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/essentials_9.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_9.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/essentials_9.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -185,13 +185,13 @@
       "src/graphics_1.o",
       "src/graphics_1.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_1.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_1.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_1.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_1.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -204,13 +204,13 @@
       "src/graphics_2.o",
       "src/graphics_2.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_2.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_2.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_2.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_2.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -223,13 +223,13 @@
       "src/graphics_3.o",
       "src/graphics_3.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_3.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_3.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_3.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_3.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -242,13 +242,13 @@
       "src/graphics_4.o",
       "src/graphics_4.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_4.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_4.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_4.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_4.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -261,13 +261,13 @@
       "src/graphics_5.o",
       "src/graphics_5.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_5.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_5.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_5.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_5.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -280,13 +280,13 @@
       "src/graphics_6.o",
       "src/graphics_6.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_6.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_6.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_6.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_6.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -299,13 +299,13 @@
       "src/graphics_7.o",
       "src/graphics_7.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/graphics_7.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/graphics_7.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_7.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/graphics_7.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -318,13 +318,13 @@
       "src/print1.o",
       "src/print1.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/print1.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/print1.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print1.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print1.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -337,13 +337,13 @@
       "src/print2.o",
       "src/print2.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/print2.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/print2.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print2.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print2.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -356,13 +356,13 @@
       "src/print3.o",
       "src/print3.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/print3.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/print3.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print3.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print3.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -375,13 +375,13 @@
       "src/print4.o",
       "src/print4.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/print4.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/print4.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/print4.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/print4.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -394,13 +394,13 @@
       "src/vector_1.o",
       "src/vector_1.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_1.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_1.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_1.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_1.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -413,13 +413,13 @@
       "src/vector_2.o",
       "src/vector_2.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_2.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_2.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_2.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_2.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -432,13 +432,13 @@
       "src/vector_3.o",
       "src/vector_3.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_3.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_3.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_3.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_3.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -451,13 +451,13 @@
       "src/vector_4.o",
       "src/vector_4.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_4.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_4.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_4.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_4.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -470,13 +470,13 @@
       "src/vector_5.o",
       "src/vector_5.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_5.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_5.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_5.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_5.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -489,13 +489,13 @@
       "src/vector_6.o",
       "src/vector_6.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_6.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_6.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_6.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_6.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -508,13 +508,13 @@
       "src/vector_7.o",
       "src/vector_7.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_7.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_7.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_7.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_7.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -527,13 +527,13 @@
       "src/vector_8.o",
       "src/vector_8.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref/library",
-    "file": "/home/pollivie/workspace/fdf_ref/library/src/vector_8.c",
-    "output": "/home/pollivie/workspace/fdf_ref/library/src/vector_8.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re/library",
+    "file": "/home/pollivie/workspace/school/fdf-re/library/src/vector_8.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/library/src/vector_8.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -545,16 +545,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/file.o",
-      "src/file.c"
+      "src/parser/parser_parse.o",
+      "src/parser/parser_parse.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/file.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/file.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/parser/parser_parse.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/parser/parser_parse.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -566,16 +566,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/renderer.o",
-      "src/renderer.c"
+      "src/parser/parser.o",
+      "src/parser/parser.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/renderer.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/renderer.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/parser/parser.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/parser/parser.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -587,16 +587,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/camera.o",
-      "src/camera.c"
+      "src/parser/parser_utils.o",
+      "src/parser/parser_utils.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/camera.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/camera.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/parser/parser_utils.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/parser/parser_utils.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -608,16 +608,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/main.o",
-      "src/main.c"
+      "src/renderer/renderer.o",
+      "src/renderer/renderer.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/main.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/main.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/renderer.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/renderer.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -629,16 +629,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/utils_1.o",
-      "src/utils_1.c"
+      "src/renderer/rendering_center.o",
+      "src/renderer/rendering_center.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/utils_1.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/utils_1.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_center.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_center.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -650,16 +650,163 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/draw.o",
-      "src/draw.c"
+      "src/renderer/rendering_project.o",
+      "src/renderer/rendering_project.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/draw.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/draw.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_project.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_project.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/renderer/rendering_translate.o",
+      "src/renderer/rendering_translate.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_translate.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_translate.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/renderer/draw.o",
+      "src/renderer/draw.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/draw.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/draw.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/renderer/rendering_fill.o",
+      "src/renderer/rendering_fill.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_fill.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_fill.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/renderer/rendering.o",
+      "src/renderer/rendering.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/renderer/rendering_rotate.o",
+      "src/renderer/rendering_rotate.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_rotate.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/renderer/rendering_rotate.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/misc/utils_1.o",
+      "src/misc/utils_1.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/misc/utils_1.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/misc/utils_1.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/inputs/file.o",
+      "src/inputs/file.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/inputs/file.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/inputs/file.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -674,13 +821,13 @@
       "src/fdf.o",
       "src/fdf.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/fdf.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/fdf.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/fdf.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/fdf.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -692,16 +839,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/inputs.o",
-      "src/inputs.c"
+      "src/main.o",
+      "src/main.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/inputs.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/inputs.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/main.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/main.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -713,16 +860,16 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/parser.o",
-      "src/parser.c"
+      "src/controls/camera.o",
+      "src/controls/camera.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/parser.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/parser.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/controls/camera.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/controls/camera.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/home/linuxbrew/.linuxbrew/bin/clang",
       "-Iinclude",
       "-Wall",
       "-Wextra",
@@ -734,11 +881,53 @@
       "-fno-omit-frame-pointer",
       "-c",
       "-o",
-      "src/rendering.o",
-      "src/rendering.c"
+      "src/controls/inputs.o",
+      "src/controls/inputs.c"
     ],
-    "directory": "/home/pollivie/workspace/fdf_ref",
-    "file": "/home/pollivie/workspace/fdf_ref/src/rendering.c",
-    "output": "/home/pollivie/workspace/fdf_ref/src/rendering.o"
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/controls/inputs.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/controls/inputs.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/map/map_utils.o",
+      "src/map/map_utils.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/map/map_utils.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/map/map_utils.o"
+  },
+  {
+    "arguments": [
+      "/home/linuxbrew/.linuxbrew/bin/clang",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address",
+      "-fsanitize=integer",
+      "-fsanitize=undefined",
+      "-g3",
+      "-fno-omit-frame-pointer",
+      "-c",
+      "-o",
+      "src/map/map.o",
+      "src/map/map.c"
+    ],
+    "directory": "/home/pollivie/workspace/school/fdf-re",
+    "file": "/home/pollivie/workspace/school/fdf-re/src/map/map.c",
+    "output": "/home/pollivie/workspace/school/fdf-re/src/map/map.o"
   }
 ]

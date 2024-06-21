@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 CC = clang
-# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3
-CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
+CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -O3 -mtune=native
+# CFLAGS = -I$(INCLUDE_DIR) -Wall -Wextra -Werror -fsanitize=address -fsanitize=integer -fsanitize=undefined -g3 -fno-omit-frame-pointer
 LIBRARY_DIR = library
 MLX_DIR = mlx
 SRC_DIR = src
@@ -52,12 +52,12 @@ endef
 all: $(TARGET)
 
 $(TARGET): $(LIBRARY_DIR)/libslib.a $(MLX_DIR)/libmlx.a $(OBJ_FILES)
-	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ $(LIBS)
+	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ $(LIBS)
 	$(call PRINT_PROGRESS)
 
 $(LIBRARY_DIR)/libslib.a:
 	@$(MAKE) -s -C $(LIBRARY_DIR)
-	$(call PRINT_PROGRESS)
+	@$(call PRINT_PROGRESS)
 
 $(MLX_DIR)/libmlx.a:
 	@$(MAKE) -s -C $(MLX_DIR) > /dev/null 2>&1 || true
@@ -65,7 +65,7 @@ $(MLX_DIR)/libmlx.a:
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@) 
 	@$(CC) $(CFLAGS) -c $< -o $@
-	$(call PRINT_PROGRESS)
+	@$(call PRINT_PROGRESS)
 
 clean:
 	@$(MAKE) -s -C $(LIBRARY_DIR) clean
@@ -76,8 +76,6 @@ fclean: clean
 	@$(MAKE) -s -C $(LIBRARY_DIR) fclean
 	@rm -f $(LIBRARY_DIR)/libslib.a
 	@rm -f $(MLX_DIR)/libmlx.a
-	@rm -rf .cache 
-	@rm -f compile_commands.json 
 
 re: fclean all
 

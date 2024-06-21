@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pollivie <pollivie.student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 11:51:52 by pollivie          #+#    #+#             */
-/*   Updated: 2024/06/15 11:51:53 by pollivie         ###   ########.fr       */
+/*   Created: 2024/06/21 12:27:46 by pollivie          #+#    #+#             */
+/*   Updated: 2024/06/21 12:27:46 by pollivie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-bool	fdf_container_init(t_fdf_container *const self)
+bool fdf_container_init(t_fdf_container *const self)
 {
 	if (!self)
 		return (false);
@@ -25,49 +25,78 @@ bool	fdf_container_init(t_fdf_container *const self)
 	self->img_handle = mlx_new_image(self->mlx_handle, WIDTH, HEIGHT);
 	if (!self->img_handle)
 		return (false);
-	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp,
-			&self->img_size, &self->img_endian);
+	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp, &self->img_size, &self->img_endian);
 	if (!self->img_buffer)
 		return (false);
 	return (true);
 }
 
-t_fdf_container	*fdf_container_create(const char *const file_name)
+t_fdf_container *fdf_container_create(const char *const file_name)
 {
-	t_fdf_container	*self;
+	t_fdf_container *fdf;
+	t_parser        *parser;
 
-	self = (t_fdf_container *)memory_alloc(sizeof(t_fdf_container));
-	if (!self)
+	fdf = memory_alloc(sizeof(t_fdf_container));
+	if (!fdf)
 		return (NULL);
-	self->parser = parser_create(file_name);
-	if (!self->parser)
-		return (fdf_container_destroy(self));
-	if (!parser_parse(self->parser, self->parser->width, self->parser->height, self->parser->rows))
-		return (fdf_container_destroy(self));
-	self->camera = camera_create(vec3(0,0,0), vec3(0, 0, 0), 1.0f, 1.0f);
-	if (!self->camera)
-		return (fdf_container_destroy(self));
-	if (!fdf_container_init(self))
-		return (fdf_container_destroy(self));
-	self->renderer = renderer_create(self, self->parser, self->parser->width, self->parser->height);
-	if (!self->renderer)
-		return (fdf_container_destroy(self));
-	return (self);
+	fdf->parser = parser_create(file_name);
+	if (!fdf->parser)
+		return (fdf_container_destroy(fdf));
+	parser = fdf->parser;
+	fdf->map = map_create(parser->entries, vec2(parser->width, parser->height), vec2(WIDTH, HEIGHT));
+	if (!fdf->map)
+		return (fdf_container_destroy(fdf));
+	fdf->camera = camera_create(vec3(0, 0, 0), vec3(0, 0, 0), 1.0f, 1.0f);
+	if (!fdf->camera)
+		return (fdf_container_destroy(fdf));
+	fdf->renderer = renderer_create(fdf->map, fdf->camera, parser->width, parser->height);
+	if (!fdf->renderer)
+		return (fdf_container_destroy(fdf));
+	if (!fdf_container_init(fdf))
+		return (fdf_container_destroy(fdf));
+	return (fdf);
 }
 
-bool	fdf_container_run(t_fdf_container *const self)
+void world_print(t_vec3 **coord, int32_t width, int32_t height)
 {
-	draw_clear(self->renderer, WIDTH, HEIGHT);
-	renderer_init(self->renderer, self->renderer->width, self->renderer->height);
-	renderer_rendering_start(self->renderer, self->renderer->width, self->renderer->height);
-	draw(self->renderer, self->renderer->width, self->renderer->height);
-	mlx_hook(self->win_handle, 17, 0, inputs_on_program_exit, self);
+	int32_t x;
+	int32_t y;
+	t_vec3  p;
+
+	y = 0;
+	while (y < height)
+	{
+		x = 0;
+		while (x < width)
+		{
+			p = coord[y][x];
+			printf("{%3d,%3d,%3d}", p.x, p.y, p.z);
+			++x;
+		}
+		printf("\n");
+		++y;
+	}
+}
+
+bool fdf_container_run(t_fdf_container *const self)
+{
+	if (!self)
+		return (false);
+	draw_clear(self, self->renderer->screen_width, self->renderer->screen_height);
+	renderer_init(self->renderer, self->map, self->renderer->world_width,
+	              self->renderer->world_height);
+	renderer_start(self->renderer, self->renderer->world_width, self->renderer->world_height);
+	self->rendered = self->renderer->rendered;
+	draw(self, self->renderer->world_width, self->renderer->world_height);
+	print_rendered(self);
+	renderer_deinit(self->renderer, self->renderer->world_width, self->renderer->world_height);
+	mlx_hook(self->win_handle, 17, 9, inputs_on_program_exit, self);
 	mlx_key_hook(self->win_handle, inputs_on_key_press, self);
 	mlx_loop(self->mlx_handle);
 	return (true);
 }
 
-t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
+t_fdf_container *fdf_container_destroy(t_fdf_container *const self)
 {
 	if (self)
 	{
@@ -75,6 +104,8 @@ t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
 			parser_destroy(self->parser);
 		if (self->camera)
 			camera_destroy(self->camera);
+		if (self->map)
+			map_destroy(self->map);
 		if (self->renderer)
 			renderer_destroy(self->renderer);
 		if (self->mlx_handle)
@@ -83,12 +114,13 @@ t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
 				mlx_destroy_image(self->mlx_handle, self->img_handle);
 			if (self->win_handle)
 				mlx_destroy_window(self->mlx_handle, self->win_handle);
-			mlx_destroy_display(self->mlx_handle);
+			if (self->mlx_handle)
+				mlx_destroy_display(self->mlx_handle);
 			memory_dealloc(self->mlx_handle);
 		}
 		memory_dealloc(self);
 		exit(EXIT_SUCCESS);
 	}
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 	return (NULL);
 }

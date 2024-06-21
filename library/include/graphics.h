@@ -151,6 +151,10 @@ union u_col4
 
 t_color color(const int32_t value);
 int32_t clamp(const int32_t min, const int32_t value, const int32_t max);
-float_t fclamp(const float_t min, const float_t value, const float_t max);
+float fclamp(float min, float value, float max) ;
+int32_t	color_value(const t_color col);
+float_t	vec2per(const t_vec2 start, const t_vec2 end, const t_vec2 at);
+float_t	vec3_percentage(const t_vec3 start, const t_vec3 end, const t_vec3 at);
+t_color lerp(const t_color start, const t_color end, const float_t scalar);
 
 #endif
