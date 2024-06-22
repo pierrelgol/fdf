@@ -52,7 +52,7 @@ endef
 all: $(TARGET)
 
 $(TARGET): $(LIBRARY_DIR)/libslib.a $(MLX_DIR)/libmlx.a $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ $(LIBS)
+	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $@ $(LIBS)
 	$(call PRINT_PROGRESS)
 
 $(LIBRARY_DIR)/libslib.a:

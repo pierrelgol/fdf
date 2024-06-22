@@ -14,7 +14,9 @@
 
 void	renderer_compute_constants(t_renderer *self)
 {
-	t_camera *const camera = self->camera;
+	t_camera	*camera;
+
+	camera = self->camera;
 	if (self->projection == PROJECTION_ISO)
 		self->scale_factor = (((float_t)WIDTH / HEIGHT) * self->camera->zoom)
 			* ((float_t)9 / 21);

@@ -29,7 +29,6 @@ t_parser	*parser_create(const char *const file_name)
 	if (!parser_parse(self, self->file->buffer))
 		return (parser_destroy(self));
 	self->map_dim = vec2(self->width, self->height);
-	printf("HEIGHT = %d WIDTH = %d\n", self->height, self->width);
 	return (self);
 }
 

@@ -14,9 +14,9 @@
 
 uintptr_t	make_entry(const int32_t zaxis, const int32_t color)
 {
-	const uint32_t	zaxis_part = (uint32_t)zaxis;
-	const uint32_t	color_part = (uint32_t)color;
-	const uintptr_t	entry = ((uintptr_t)color_part << 32) | (uintptr_t)zaxis_part;
+	const uint32_t	zp = (uint32_t)zaxis;
+	const uint32_t	cp = (uint32_t)color;
+	const uintptr_t	entry = ((uintptr_t)cp << 32) | (uintptr_t)zp;
 
 	return (entry);
 }

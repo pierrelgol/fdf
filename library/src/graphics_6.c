@@ -41,21 +41,20 @@ float_t	vec3_percentage(const t_vec3 start, const t_vec3 end, const t_vec3 at)
 	return (curr_distance / total_distance);
 }
 
-float fclamp(float min, float value, float max) 
+float	fclamp(float min, float value, float max)
 {
-    return fmaxf(min, fminf(value, max));
+	return (fmaxf(min, fminf(value, max)));
 }
 
-t_color lerp(const t_color start, const t_color end, const float_t scalar)
+t_color	lerp(const t_color start, const t_color end, const float_t scalar)
 {
-    t_color lerped_color;
-    float_t t = fclamp(0.0f, scalar, 1.0f);
+	t_color	lerped_color;
+	float_t	t;
 
-    lerped_color.a = (uint8_t)(start.a + (end.a - start.a) * t);
-    lerped_color.r = (uint8_t)(start.r + (end.r - start.r) * t);
-    lerped_color.g = (uint8_t)(start.g + (end.g - start.g) * t);
-    lerped_color.b = (uint8_t)(start.b + (end.b - start.b) * t);
-
-    return lerped_color;
+	t = fclamp(0.0f, scalar, 1.0f);
+	lerped_color.a = (uint8_t)(start.a + (end.a - start.a) * t);
+	lerped_color.r = (uint8_t)(start.r + (end.r - start.r) * t);
+	lerped_color.g = (uint8_t)(start.g + (end.g - start.g) * t);
+	lerped_color.b = (uint8_t)(start.b + (end.b - start.b) * t);
+	return (lerped_color);
 }
-

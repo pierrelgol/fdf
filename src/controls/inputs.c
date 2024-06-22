@@ -78,7 +78,6 @@ int32_t	inputs_on_key_press(const int32_t keycode, void *const handle)
 	t_fdf_container	*self;
 
 	self = (t_fdf_container *)handle;
-	// printf("keycode :%d\n", keycode);
 	if (keycode == XK_Escape)
 		inputs_on_program_exit(handle);
 	if (inputs_movement(keycode, self->camera))

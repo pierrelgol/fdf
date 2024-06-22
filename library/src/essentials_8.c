@@ -49,7 +49,7 @@ uint64_t	string_span(const char *const source, const char *const delimiters)
 	uint64_t	i;
 	char		*set;
 
-	set = (char[256]){0};
+	set = (char [256]){0};
 	if (!source || !delimiters)
 		return (0);
 	i = 0;

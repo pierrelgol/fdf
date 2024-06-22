@@ -48,7 +48,7 @@ t_fdf_container	*fdf_container_create(const char *const file_name)
 			vec2(WIDTH, HEIGHT));
 	if (!fdf->map)
 		return (fdf_container_destroy(fdf));
-	fdf->camera = camera_create(vec3(0, 0, 0), vec3(0, 0, 0), 1.0f, 1.0f);
+	fdf->camera = camera_create(vec3(0, 0, 0), vec3(0, 0, 0), 0.5f, 0.1f);
 	if (!fdf->camera)
 		return (fdf_container_destroy(fdf));
 	fdf->renderer = renderer_create(fdf->map, fdf->camera, parser->width,
@@ -58,27 +58,6 @@ t_fdf_container	*fdf_container_create(const char *const file_name)
 	if (!fdf_container_init(fdf))
 		return (fdf_container_destroy(fdf));
 	return (fdf);
-}
-
-void	world_print(t_vec3 **coord, int32_t width, int32_t height)
-{
-	int32_t	x;
-	int32_t	y;
-	t_vec3	p;
-
-	y = 0;
-	while (y < height)
-	{
-		x = 0;
-		while (x < width)
-		{
-			p = coord[y][x];
-			printf("{%3d,%3d,%3d}", p.x, p.y, p.z);
-			++x;
-		}
-		printf("\n");
-		++y;
-	}
 }
 
 bool	fdf_container_run(t_fdf_container *const self)
@@ -93,7 +72,6 @@ bool	fdf_container_run(t_fdf_container *const self)
 		self->renderer->world_height);
 	self->rendered = self->renderer->rendered;
 	draw(self, self->renderer->world_width, self->renderer->world_height);
-	// print_rendered(self);
 	renderer_deinit(self->renderer, self->renderer->world_width,
 		self->renderer->world_height);
 	mlx_hook(self->win_handle, 17, 9, inputs_on_program_exit, self);

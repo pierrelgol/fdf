@@ -84,10 +84,10 @@ char	**string_tokenize(const char *const source, const int32_t ch)
 	i = 0;
 	while (i < size && source[start])
 	{
-		start += string_span(&source[start], (char[2]){ch, 0x00});
+		start += string_span(&source[start], (char [2]){ch, 0x00});
 		if (source[start] == '\0')
 			break ;
-		end = string_cspan(&source[start], (char[2]){ch, 0x00});
+		end = string_cspan(&source[start], (char [2]){ch, 0x00});
 		result[i++] = string_nclone(&source[start], end);
 		start += end;
 	}
