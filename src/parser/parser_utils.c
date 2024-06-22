@@ -12,21 +12,21 @@
 
 #include "fdf.h"
 
-uintptr_t make_entry(const int32_t zaxis, const int32_t color)
+uintptr_t	make_entry(const int32_t zaxis, const int32_t color)
 {
-    const uint32_t zaxis_part = (uint32_t)zaxis;
-    const uint32_t color_part = (uint32_t)color;
-    const uintptr_t entry = ((uintptr_t)color_part << 32) | (uintptr_t)zaxis_part;
-    return (entry);
+	const uint32_t	zaxis_part = (uint32_t)zaxis;
+	const uint32_t	color_part = (uint32_t)color;
+	const uintptr_t	entry = ((uintptr_t)color_part << 32) | (uintptr_t)zaxis_part;
+
+	return (entry);
 }
 
-int32_t entry_get_color(const uintptr_t entry)
+int32_t	entry_get_color(const uintptr_t entry)
 {
-    return ((int32_t)(entry >> 32));
+	return ((int32_t)(entry >> 32));
 }
 
-int32_t entry_get_zaxis(const uintptr_t entry)
+int32_t	entry_get_zaxis(const uintptr_t entry)
 {
-    return ((int32_t)(entry & 0xFFFFFFFF));
+	return ((int32_t)(entry & 0xFFFFFFFF));
 }
-

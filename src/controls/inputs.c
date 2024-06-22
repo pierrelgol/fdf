@@ -12,13 +12,13 @@
 
 #include "fdf.h"
 
-int32_t inputs_on_program_exit(void *const handle)
+int32_t	inputs_on_program_exit(void *const handle)
 {
 	fdf_container_destroy(handle);
 	return (false);
 }
 
-int32_t inputs_movement(const int32_t keycode, t_camera *const camera)
+int32_t	inputs_movement(const int32_t keycode, t_camera *const camera)
 {
 	if (keycode == XK_h)
 		camera_move(camera, vec3(MOVE_STEP, 0, 0));
@@ -37,7 +37,7 @@ int32_t inputs_movement(const int32_t keycode, t_camera *const camera)
 	return (true);
 }
 
-int32_t inputs_rotation(const int32_t keycode, t_camera *const camera)
+int32_t	inputs_rotation(const int32_t keycode, t_camera *const camera)
 {
 	if (keycode == XK_w)
 		camera_rota(camera, vec3(ROTA_STEP, 0, 0));
@@ -56,7 +56,7 @@ int32_t inputs_rotation(const int32_t keycode, t_camera *const camera)
 	return (true);
 }
 
-int32_t inputs_params(const int32_t keycode, t_camera *const camera)
+int32_t	inputs_params(const int32_t keycode, t_camera *const camera)
 {
 	if (keycode == XK_minus)
 		camera_zoom(camera, ZOOM_STEP);
@@ -73,12 +73,12 @@ int32_t inputs_params(const int32_t keycode, t_camera *const camera)
 	return (1);
 }
 
-int32_t inputs_on_key_press(const int32_t keycode, void *const handle)
+int32_t	inputs_on_key_press(const int32_t keycode, void *const handle)
 {
-	t_fdf_container *self;
+	t_fdf_container	*self;
 
-	self = (t_fdf_container *) handle;
-	printf("keycode :%d\n", keycode);
+	self = (t_fdf_container *)handle;
+	// printf("keycode :%d\n", keycode);
 	if (keycode == XK_Escape)
 		inputs_on_program_exit(handle);
 	if (inputs_movement(keycode, self->camera))

@@ -11,34 +11,28 @@
 /* ************************************************************************** */
 #include "fdf.h"
 
-void renderer_rotate_vec(t_vec3 *const vec, t_camera *const camera)
+void	renderer_rotate_vec(t_vec3 *const vec, t_camera *const camera)
 {
-	double temp_x = vec->x;
-	double temp_y = vec->y;
-
-	// Apply rotations in the order: pitch, yaw, roll
-	// Rotate around X-axis (pitch)
-	vec->y = temp_y * camera->cos_pitch - vec->z * camera->sin_pitch;
-	vec->z = temp_y * camera->sin_pitch + vec->z * camera->cos_pitch;
-
-	temp_y = vec->y;
-
-	// Rotate around Y-axis (yaw)
-	vec->x = temp_x * camera->cos_yaw + vec->z * camera->sin_yaw;
-	vec->z = -temp_x * camera->sin_yaw + vec->z * camera->cos_yaw;
+	double	temp_x;
+	double	temp_y;
 
 	temp_x = vec->x;
-
-	// Rotate around Z-axis (roll)
+	temp_y = vec->y;
+	vec->y = temp_y * camera->cos_pitch - vec->z * camera->sin_pitch;
+	vec->z = temp_y * camera->sin_pitch + vec->z * camera->cos_pitch;
+	temp_y = vec->y;
+	vec->x = temp_x * camera->cos_yaw + vec->z * camera->sin_yaw;
+	vec->z = -temp_x * camera->sin_yaw + vec->z * camera->cos_yaw;
+	temp_x = vec->x;
 	vec->x = temp_x * camera->cos_roll - temp_y * camera->sin_roll;
 	vec->y = temp_x * camera->sin_roll + temp_y * camera->cos_roll;
 }
 
-
-void renderer_world_rotate(t_renderer *const self, const int32_t width, const int32_t height)
+void	renderer_world_rotate(t_renderer *const self, const int32_t width,
+		const int32_t height)
 {
-	int32_t y;
-	int32_t x;
+	int32_t	y;
+	int32_t	x;
 
 	y = 0;
 	while (y < height)

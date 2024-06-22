@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void renderer_apply_camera_zoom_and_scale(t_vec3 *vec, t_camera *camera)
+void	renderer_apply_camera_zoom_and_scale(t_vec3 *vec, t_camera *camera)
 {
 	vec->x *= camera->zoom;
 	vec->y *= camera->zoom;
@@ -20,10 +20,11 @@ void renderer_apply_camera_zoom_and_scale(t_vec3 *vec, t_camera *camera)
 	vec->z *= camera->z_scale;
 }
 
-void renderer_world_translate(t_renderer *const self, const int32_t width, const int32_t height)
+void	renderer_world_translate(t_renderer *const self, const int32_t width,
+		const int32_t height)
 {
-	int32_t y;
-	int32_t x;
+	int32_t	y;
+	int32_t	x;
 
 	y = 0;
 	while (y < height)
@@ -31,7 +32,8 @@ void renderer_world_translate(t_renderer *const self, const int32_t width, const
 		x = 0;
 		while (x < width)
 		{
-			renderer_apply_camera_zoom_and_scale(&self->world[y][x], self->camera);
+			renderer_apply_camera_zoom_and_scale(&self->world[y][x],
+				self->camera);
 			self->world[y][x].x += self->camera->cam_position.x;
 			self->world[y][x].y += self->camera->cam_position.y;
 			self->world[y][x].z += self->camera->cam_position.z;

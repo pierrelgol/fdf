@@ -12,7 +12,8 @@
 
 #include "fdf.h"
 
-t_camera *camera_create(const t_vec3 pos, const t_vec3 rot, const float_t zoom, const float_t z_scale)
+t_camera	*camera_create(const t_vec3 pos, const t_vec3 rot,
+		const float_t zoom, const float_t z_scale)
 {
 	t_camera	*self;
 
@@ -31,12 +32,12 @@ t_camera *camera_create(const t_vec3 pos, const t_vec3 rot, const float_t zoom, 
 	return (self);
 }
 
-void      camera_move(t_camera *const self, t_vec3 offset)
+void	camera_move(t_camera *const self, t_vec3 offset)
 {
 	self->cam_position = vec3_add(self->cam_position, offset);
 }
 
-void      camera_rota(t_camera *const self, t_vec3 offset)
+void	camera_rota(t_camera *const self, t_vec3 offset)
 {
 	self->deg_pitch += offset.x;
 	self->deg_yaw += offset.y;
@@ -46,17 +47,17 @@ void      camera_rota(t_camera *const self, t_vec3 offset)
 	self->rad_roll = (self->deg_roll * M_PI / 180.0f);
 }
 
-void      camera_zoom(t_camera *const self, float_t offset)
+void	camera_zoom(t_camera *const self, float_t offset)
 {
 	self->zoom += offset;
 }
 
-void      camera_scale(t_camera *const self, float_t offset)
+void	camera_scale(t_camera *const self, float_t offset)
 {
 	self->z_scale += offset;
 }
 
-t_camera *camera_destroy(t_camera *const self)
+t_camera	*camera_destroy(t_camera *const self)
 {
 	if (self)
 		memory_dealloc(self);

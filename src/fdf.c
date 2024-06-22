@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-bool fdf_container_init(t_fdf_container *const self)
+bool	fdf_container_init(t_fdf_container *const self)
 {
 	if (!self)
 		return (false);
@@ -25,16 +25,17 @@ bool fdf_container_init(t_fdf_container *const self)
 	self->img_handle = mlx_new_image(self->mlx_handle, WIDTH, HEIGHT);
 	if (!self->img_handle)
 		return (false);
-	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp, &self->img_size, &self->img_endian);
+	self->img_buffer = mlx_get_data_addr(self->img_handle, &self->img_bpp,
+			&self->img_size, &self->img_endian);
 	if (!self->img_buffer)
 		return (false);
 	return (true);
 }
 
-t_fdf_container *fdf_container_create(const char *const file_name)
+t_fdf_container	*fdf_container_create(const char *const file_name)
 {
-	t_fdf_container *fdf;
-	t_parser        *parser;
+	t_fdf_container	*fdf;
+	t_parser		*parser;
 
 	fdf = memory_alloc(sizeof(t_fdf_container));
 	if (!fdf)
@@ -43,13 +44,15 @@ t_fdf_container *fdf_container_create(const char *const file_name)
 	if (!fdf->parser)
 		return (fdf_container_destroy(fdf));
 	parser = fdf->parser;
-	fdf->map = map_create(parser->entries, vec2(parser->width, parser->height), vec2(WIDTH, HEIGHT));
+	fdf->map = map_create(parser->entries, vec2(parser->width, parser->height),
+			vec2(WIDTH, HEIGHT));
 	if (!fdf->map)
 		return (fdf_container_destroy(fdf));
 	fdf->camera = camera_create(vec3(0, 0, 0), vec3(0, 0, 0), 1.0f, 1.0f);
 	if (!fdf->camera)
 		return (fdf_container_destroy(fdf));
-	fdf->renderer = renderer_create(fdf->map, fdf->camera, parser->width, parser->height);
+	fdf->renderer = renderer_create(fdf->map, fdf->camera, parser->width,
+			parser->height);
 	if (!fdf->renderer)
 		return (fdf_container_destroy(fdf));
 	if (!fdf_container_init(fdf))
@@ -57,11 +60,11 @@ t_fdf_container *fdf_container_create(const char *const file_name)
 	return (fdf);
 }
 
-void world_print(t_vec3 **coord, int32_t width, int32_t height)
+void	world_print(t_vec3 **coord, int32_t width, int32_t height)
 {
-	int32_t x;
-	int32_t y;
-	t_vec3  p;
+	int32_t	x;
+	int32_t	y;
+	t_vec3	p;
 
 	y = 0;
 	while (y < height)
@@ -78,25 +81,28 @@ void world_print(t_vec3 **coord, int32_t width, int32_t height)
 	}
 }
 
-bool fdf_container_run(t_fdf_container *const self)
+bool	fdf_container_run(t_fdf_container *const self)
 {
 	if (!self)
 		return (false);
-	draw_clear(self, self->renderer->screen_width, self->renderer->screen_height);
+	draw_clear(self, self->renderer->screen_width,
+		self->renderer->screen_height);
 	renderer_init(self->renderer, self->map, self->renderer->world_width,
-	              self->renderer->world_height);
-	renderer_start(self->renderer, self->renderer->world_width, self->renderer->world_height);
+		self->renderer->world_height);
+	renderer_start(self->renderer, self->renderer->world_width,
+		self->renderer->world_height);
 	self->rendered = self->renderer->rendered;
 	draw(self, self->renderer->world_width, self->renderer->world_height);
-	print_rendered(self);
-	renderer_deinit(self->renderer, self->renderer->world_width, self->renderer->world_height);
+	// print_rendered(self);
+	renderer_deinit(self->renderer, self->renderer->world_width,
+		self->renderer->world_height);
 	mlx_hook(self->win_handle, 17, 9, inputs_on_program_exit, self);
 	mlx_key_hook(self->win_handle, inputs_on_key_press, self);
 	mlx_loop(self->mlx_handle);
 	return (true);
 }
 
-t_fdf_container *fdf_container_destroy(t_fdf_container *const self)
+t_fdf_container	*fdf_container_destroy(t_fdf_container *const self)
 {
 	if (self)
 	{

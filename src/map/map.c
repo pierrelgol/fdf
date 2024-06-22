@@ -12,9 +12,10 @@
 
 #include "fdf.h"
 
-static bool map_alloc(t_map *const self, const int32_t width, const int32_t height)
+static bool	map_alloc(t_map *const self, const int32_t width,
+		const int32_t height)
 {
-	int32_t index;
+	int32_t	index;
 
 	if (!self || !width || !height)
 		return (false);
@@ -36,7 +37,8 @@ static bool map_alloc(t_map *const self, const int32_t width, const int32_t heig
 	return (true);
 }
 
-static void map_update_min_max(t_map *const self, const int32_t x, const int32_t y, const int32_t z)
+static void	map_update_min_max(t_map *const self, const int32_t x,
+		const int32_t y, const int32_t z)
 {
 	if (x < self->map_min.x)
 		self->map_min.x = x;
@@ -52,12 +54,12 @@ static void map_update_min_max(t_map *const self, const int32_t x, const int32_t
 		self->map_max.z = z;
 }
 
-
-static bool map_fill(t_map *const self, t_vector *const it, const int32_t width, const int32_t height)
+static bool	map_fill(t_map *const self, t_vector *const it, const int32_t width,
+		const int32_t height)
 {
-	uintptr_t entry;
-	int32_t   y;
-	int32_t   x;
+	uintptr_t	entry;
+	int32_t		y;
+	int32_t		x;
 
 	if (!self || !it || !width || !height)
 		return (false);
@@ -79,9 +81,10 @@ static bool map_fill(t_map *const self, t_vector *const it, const int32_t width,
 	return (true);
 }
 
-t_map *map_create(t_vector *const entries, const t_vec2 map_dim, const t_vec2 screen_dim)
+t_map	*map_create(t_vector *const entries, const t_vec2 map_dim,
+		const t_vec2 screen_dim)
 {
-	t_map *self;
+	t_map	*self;
 
 	if (!entries || !map_dim.x || !map_dim.y || !screen_dim.x || !screen_dim.y)
 		return (NULL);
@@ -97,15 +100,15 @@ t_map *map_create(t_vector *const entries, const t_vec2 map_dim, const t_vec2 sc
 	self->map_center.x = (self->map_min.x + self->map_max.x) / 2.0f;
 	self->map_center.y = (self->map_min.y + self->map_max.y) / 2.0f;
 	self->map_center.z = (self->map_min.z + self->map_max.z) / 2.0f;
-	self->screen_center.x = (0 +  WIDTH) / 2.0f;
-	self->screen_center.y = (0 +  HEIGHT) / 2.0f;
+	self->screen_center.x = (0 + WIDTH) / 2.0f;
+	self->screen_center.y = (0 + HEIGHT) / 2.0f;
 	self->screen_center.z = (0.0f);
 	self->screen_width = screen_dim.x;
 	self->screen_height = screen_dim.y;
 	return (self);
 }
 
-t_map *map_destroy(t_map *const self)
+t_map	*map_destroy(t_map *const self)
 {
 	if (self)
 	{

@@ -12,12 +12,12 @@
 
 #include "fdf.h"
 
-void renderer_compute_constants(t_renderer *self)
+void	renderer_compute_constants(t_renderer *self)
 {
 	t_camera *const camera = self->camera;
-
 	if (self->projection == PROJECTION_ISO)
-		self->scale_factor = (((float_t)WIDTH / HEIGHT) * self->camera->zoom ) * ((float_t)9 / 21);
+		self->scale_factor = (((float_t)WIDTH / HEIGHT) * self->camera->zoom)
+			* ((float_t)9 / 21);
 	else if (self->projection == PROJECTION_ORT)
 		self->scale_factor = ((float_t)WIDTH / HEIGHT) * self->camera->zoom;
 	camera->cos_pitch = cos(camera->rad_pitch);
@@ -29,7 +29,8 @@ void renderer_compute_constants(t_renderer *self)
 	self->screen_center = self->map->screen_center;
 }
 
-void renderer_start(t_renderer *const self, const int32_t world_width, const int32_t world_height)
+void	renderer_start(t_renderer *const self, const int32_t world_width,
+		const int32_t world_height)
 {
 	renderer_compute_constants(self);
 	renderer_world_translate(self, world_width, world_height);

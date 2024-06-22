@@ -74,32 +74,20 @@ static void draw_init_vars(t_bresenham_vars *const param, const t_vec3 *const a,
 
 int32_t dist(t_vec3 p, t_vec3 a, t_vec3 c)
 {
-	// Extract ARGB components from raw color values
-	uint8_t a1 = (a.z >> 24) & 0xFF;
-	uint8_t r1 = (a.z >> 16) & 0xFF;
-	uint8_t g1 = (a.z >> 8) & 0xFF;
-	uint8_t b1 = a.z & 0xFF;
+	t_color c1;
+	t_color c2;
+	t_color r;
+	float   t;
 
-	uint8_t a2 = (c.z >> 24) & 0xFF;
-	uint8_t r2 = (c.z >> 16) & 0xFF;
-	uint8_t g2 = (c.z >> 8) & 0xFF;
-	uint8_t b2 = c.z & 0xFF;
-
-	// Calculate distances
-	float line_dx = c.x - a.x;
-	float line_dy = c.y - a.y;
-	float line_dist = sqrtf(line_dx * line_dx + line_dy * line_dy);
-
-	float point_dx = p.x - a.x;
-	float point_dy = p.y - a.y;
-	float point_dist = sqrtf(point_dx * point_dx + point_dy * point_dy);
-	float t = fminf(point_dist / line_dist, 1.0f);
-
-	uint8_t ca = (uint8_t) ((float) a1 + (a2 - a1) * t);
-	uint8_t cr = (uint8_t) ((float) r1 + (r2 - r1) * t);
-	uint8_t cg = (uint8_t) ((float) g1 + (g2 - g1) * t);
-	uint8_t cb = (uint8_t) ((float) b1 + (b2 - b1) * t);
-	return (cb << 24) | (cg << 16) | (cr << 8) | ca;
+	// c1 = color(0xFFFF0000);
+	c1 = color(0x000000FF);
+	c2 = color(c.z);
+	t = fminf(sqrtf((p.x - a.x) * (p.x - a.x) + (p.y - a.y) * (p.y - a.y)) / sqrtf((c.x - a.x) * (c.x - a.x) + (c.y - a.y) * (c.y - a.y)), 1.0f);
+	// r.a = (uint8_t) ((float) c1.a - (c2.a - c1.a) * t);
+	r.r = (uint8_t) ((float) c1.r - (c2.r - c1.r) * t);
+	r.g = (uint8_t) ((float) c1.g - (c2.g - c1.g) * t);
+	r.b = (uint8_t) ((float) c1.b - (c2.b - c1.b) * t);
+	return (r.color);
 }
 
 void draw_line(t_fdf_container *const self, t_vec3 a, t_vec3 c)
@@ -131,9 +119,11 @@ void draw_line(t_fdf_container *const self, t_vec3 a, t_vec3 c)
 
 void draw_pixel(t_fdf_container *const self, const t_vec3 pos)
 {
+	char *pixel;
+
 	if (pos.x >= 0 && pos.x < WIDTH && pos.y >= 0 && pos.y < HEIGHT)
 	{
-		char *pixel = self->img_buffer + (pos.y * self->img_size + pos.x * (self->img_bpp / 8));
+		pixel = self->img_buffer + (pos.y * self->img_size + pos.x * (self->img_bpp / 8));
 		*(uint32_t *) pixel = (uint32_t) pos.z;
 	}
 }

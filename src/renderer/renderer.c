@@ -13,15 +13,16 @@
 #include "fdf.h"
 #include <string.h>
 
-static bool renderer_alloc(t_renderer *const self, const int32_t width, const int32_t height)
+static bool	renderer_alloc(t_renderer *const self, const int32_t width,
+		const int32_t height)
 {
-	int32_t y;
+	int32_t	y;
 
 	self->world = memory_alloc((height) * sizeof(t_vec3 *));
-	self->colors = memory_alloc((height)* sizeof(int32_t *));
+	self->colors = memory_alloc((height) * sizeof(int32_t *));
 	if (!self->world || !self->colors)
 		return (false);
-	self->rendered_buffer = memory_alloc(width * (height )* sizeof(t_vec3));
+	self->rendered_buffer = memory_alloc(width * (height) * sizeof(t_vec3));
 	self->rendered = memory_alloc((height) * sizeof(t_vec3 *));
 	if (!self->rendered_buffer || !self->rendered)
 		return (false);
@@ -34,9 +35,10 @@ static bool renderer_alloc(t_renderer *const self, const int32_t width, const in
 	return (true);
 }
 
-t_renderer *renderer_create(t_map *const map, t_camera *const camera, const int32_t width, const int32_t height)
+t_renderer	*renderer_create(t_map *const map, t_camera *const camera,
+		const int32_t width, const int32_t height)
 {
-	t_renderer *self;
+	t_renderer	*self;
 
 	if (!map || !camera || !height || !width)
 		return (NULL);
@@ -57,9 +59,10 @@ t_renderer *renderer_create(t_map *const map, t_camera *const camera, const int3
 	return (self);
 }
 
-bool renderer_init(t_renderer *const self, t_map *const map, const int32_t width, const int32_t height)
+bool	renderer_init(t_renderer *const self, t_map *const map,
+		const int32_t width, const int32_t height)
 {
-	int32_t y;
+	int32_t	y;
 
 	if (!self || !map || !width || !height)
 		return (false);
@@ -78,7 +81,8 @@ bool renderer_init(t_renderer *const self, t_map *const map, const int32_t width
 	return (true);
 }
 
-bool renderer_deinit(t_renderer *const self, const int32_t width, const int32_t height)
+bool	renderer_deinit(t_renderer *const self, const int32_t width,
+		const int32_t height)
 {
 	if (!self || !width || !height)
 		return (false);
@@ -94,7 +98,7 @@ bool renderer_deinit(t_renderer *const self, const int32_t width, const int32_t 
 	return (true);
 }
 
-t_renderer *renderer_destroy(t_renderer *const self)
+t_renderer	*renderer_destroy(t_renderer *const self)
 {
 	if (self)
 	{

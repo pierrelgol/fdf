@@ -12,11 +12,11 @@
 
 #include "fdf.h"
 
-static bool parser2_parse_entry(t_parser *const self, const char *const entry)
+static bool	parser2_parse_entry(t_parser *const self, const char *const entry)
 {
-	char  **result;
-	int32_t zaxis;
-	int32_t col;
+	char	**result;
+	int32_t	zaxis;
+	int32_t	col;
 
 	if (!self || !entry)
 		return (false);
@@ -33,10 +33,10 @@ static bool parser2_parse_entry(t_parser *const self, const char *const entry)
 	return (true);
 }
 
-static bool parser2_parse_row(t_parser *const self, const char *const row)
+static bool	parser2_parse_row(t_parser *const self, const char *const row)
 {
-	int32_t width;
-	char  **cols;
+	int32_t	width;
+	char	**cols;
 
 	if (!self || !row)
 		return (false);
@@ -55,10 +55,10 @@ static bool parser2_parse_row(t_parser *const self, const char *const row)
 	return (true);
 }
 
-bool parser_parse(t_parser *const self, const char *const file_buffer)
+bool	parser_parse(t_parser *const self, const char *const file_buffer)
 {
-	int32_t height;
-	char  **rows;
+	int32_t	height;
+	char	**rows;
 
 	if (!self || !file_buffer)
 		return (false);

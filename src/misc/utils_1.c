@@ -12,11 +12,11 @@
 
 #include "../include/fdf.h"
 
-int32_t base10_to_integer(const char *const string)
+int32_t	base10_to_integer(const char *const string)
 {
-	int32_t result;
-	int32_t index;
-	int32_t sign;
+	int32_t	result;
+	int32_t	index;
+	int32_t	sign;
 
 	if (!string)
 		return (0);
@@ -35,10 +35,10 @@ int32_t base10_to_integer(const char *const string)
 	return (result * sign);
 }
 
-int32_t base16_to_integer(const char *const string)
+int32_t	base16_to_integer(const char *const string)
 {
-	int32_t result;
-	int32_t index;
+	int32_t	result;
+	int32_t	index;
 
 	if (!string)
 		return (0);
@@ -63,11 +63,11 @@ int32_t base16_to_integer(const char *const string)
 	return (result);
 }
 
-void screen_print(t_vec2 **coord, int32_t width, int32_t height)
+void	screen_print(t_vec2 **coord, int32_t width, int32_t height)
 {
-	int32_t x;
-	int32_t y;
-	t_vec2  p;
+	int32_t	x;
+	int32_t	y;
+	t_vec2	p;
 
 	y = 0;
 	while (y < height)
@@ -83,4 +83,3 @@ void screen_print(t_vec2 **coord, int32_t width, int32_t height)
 		++y;
 	}
 }
-
